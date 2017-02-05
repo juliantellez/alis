@@ -4,45 +4,34 @@
   padding: 0 10px;
   overflow: scroll;
   position: relative;
-  // display: flex;
-  // flex-direction: column;
-  &-tabs {
-    display: flex;
-    flex-direction: column;
-  }
+
   &-icon {
+    position: absolute;
     &--home {
-      width: 160px;
-      height: 180px;
+      height: 35%;
+      top: 2%;
+      left: 5%;
     }
     &--about {
-      width: 200px;
-      height: 130px;
-      margin-top: -40px;
+      height: 24%;
+      top: 31%;
+      right: 3%;
     }
     &--works {
-      width: 200px;
-      height: 160px;
-      margin-top: -30px;
+      height: 22%;
+      top: 51%;
+      left: 3%;
     }
     &--contact {
-      width: 164px;
-      height: 148px;
-      margin-top: -52px;
+      top: 73%;
+      height: 21%;
+      right: 6%;
     }
     &--logo {
-      position: absolute;
-      bottom: -36px;
-      width: 70px;
-      height: 111px;
-    }
-  }
-  &-link {
-    &:nth-child(odd) {
-      margin-left: auto;
-    }
-    &:nth-child(even) {
-      margin-right: auto;
+      position: fixed;
+      bottom: 0;
+      width: 26%;
+      height: 7%;
     }
   }
 }

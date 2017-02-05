@@ -13,17 +13,15 @@ export default class Home extends React.Component {
     return (
       <div className='Home'>
         <HomeIcon className='Home-icon Home-icon--home' />
-        <div className='Home-tabs'>
-          <Link className='Home-link' to='/about'>
-            <AboutIcon className='Home-icon Home-icon--about' />
-          </Link>
-          <Link className='Home-link' to='/works'>
-            <WorksIcon className='Home-icon Home-icon--works' />
-          </Link>
-          <Link className='Home-link' to='/contact'>
-            <ContactsIcon className=' Home-icon Home-icon--contact' />
-          </Link>
-        </div>
+        <Link className='Home-link' to='/about'>
+          <AboutIcon className='Home-icon Home-icon--about' />
+        </Link>
+        <Link className='Home-link' to='/works'>
+          <WorksIcon className='Home-icon Home-icon--works' />
+        </Link>
+        <Link className='Home-link' to='/contact'>
+          <ContactsIcon className=' Home-icon Home-icon--contact' />
+        </Link>
         <Logo className='Home-icon Home-icon--logo' />
       </div>
     )
