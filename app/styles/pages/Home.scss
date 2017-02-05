@@ -16,11 +16,15 @@
     &-text {
       color: $greyish-brown;
       font-size: 36px;
+      white-space: pre-line;
       display: none;
       @include media(tablet) {
         display: flex;
-        max-width: 60%;
+        max-width: 50%;
         padding-top: 20px;
+      }
+      @include media(tablet) {
+        max-width: 66%;
       }
     }
   }
@@ -36,15 +40,36 @@
     @include media(tablet) {
       position: initial;
     }
+    @include media (desktop) {
+      position: absolute;
+    }
     &--home {
       height: 35%;
       top: 2%;
       left: 5%;
+      @include media (desktop) {
+        height: 270px;
+        right: 10%;
+        left: initial;
+        top: 5%;
+      }
     }
     &--about {
       height: 24%;
       top: 31%;
       right: 3%;
+      @include media (tablet) {
+        height: 200px;
+        right: 31%;
+        left: initial;
+        top: 45%;
+      }
+      @include media (desktop) {
+        right: 10%;
+      }
+      @include media (widescreen) {
+        right: 31%;
+      }
     }
     &--works {
       height: 22%;
@@ -53,6 +78,11 @@
       @include media (tablet) {
         transform: rotate(-51deg);
         margin-top: 62px;
+      }
+      @include media (desktop) {
+        height: 200px;
+        left: 8%;
+        top: 55%;
       }
     }
     &--contact {
@@ -64,6 +94,10 @@
         left: 3%;
         top: 76%;
       }
+      @include media (desktop) {
+        left: initial;
+        right: 10%;
+      }
     }
     &--logo {
       position: fixed;
@@ -73,6 +107,10 @@
       @include media (tablet) {
         position: initial;
         width: initial;
+        height: 40px;
+      }
+      @include media (desktop) {
+        height: 60px;
       }
     }
   }

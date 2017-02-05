@@ -15,13 +15,11 @@ export default class Home extends React.Component {
         <Logo className='Home-icon Home-icon--logo' />
         <div className='Home-content'>
           <div className='Home-content-text'>
-            Hi I’m Ali
-            Welcome to my online portfolio,
-            I’m a web and graphic designer based in London.
-            My creations represent the way i think ,feel
-            and the way i live.
-            Please take a tour
-            around my site .
+            {`Hi I’m Ali
+              Welcome to my online portfolio,
+              I’m a web and graphic designer based in London.
+              My creations represent the way I think, feel and live.
+              Please take a tour around my site .`}
           </div>
           <div className='Home-tabs'>
             <HomeIcon className='Home-icon Home-icon--home' />
