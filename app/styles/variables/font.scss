@@ -2,33 +2,12 @@ $fontFamily-base: 'Open Sans', sans-serif !important;
 $fontFamily-serif: "source-serif-pro", "Times New Roman", Times, serif;
 $fontFamily-mono: "source-code-pro", Monaco, Menlo, Consolas, "Courier New", monospace;
 
-//FONT SIZES
+//SIZES
+$fontSize-small:        10px;
+$fontSize-medium:       14px;
+$fontSize-large:        18px;
 
-$fontSize-micro:      10px;
-$fontSize-smallest:   11px;
-$fontSize-smaller:    12px;
-$fontSize-small:      13px;
-$fontSize-base:       14px;
-$fontSize-large:      16px;
-$fontSize-larger:     18px;
-$fontSize-largest:    20px;
-$fontSize-jumbo:      24px;
-$fontSize-30px:       30px;
-$fontSize-40px:       40px;
-$fontSize-50px:       50px;
-
-//FONT WEIGHT
+//WEIGHT
 $light:               300;
 $regular:             400;
 $bold:                600;
-
-//LINE HEIGHT
-$lineHeight-tightest:         50px;
-$lineHeight-tighter:          40px;
-$lineHeight-tightish:         32px;
-$lineHeight-tight:            25px;
-$lineHeight-baseSans:         20px;
-$lineHeight-base:             20px;
-$lineHeight-loose:            18px;
-$lineHeight-looser:           16px;
-$lineHeight-loosest:          12px;

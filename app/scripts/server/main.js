@@ -2,7 +2,7 @@ import Hapi from 'hapi'
 import inert from 'inert'
 
 import config from 'scripts/config'
-import routes from 'scripts/routes/handler'
+import routesHandler from 'scripts/routes/handler'
 
 const server = new Hapi.Server()
 
@@ -13,21 +13,7 @@ server.register([inert], e => {
     throw new Error(e)
   }
 
-  server.route(routes)
-  // server.route({
-  //   path: '/',
-  //   method: 'GET',
-  //   handler: (request, reply) => {
-  //     reply(`
-  //       <html>
-  //         <body>
-  //           <script src='/bundles/client.js'></script>
-  //         </body>
-  //       </html>
-  //     `)
-  //   },
-  // })
-
+  server.route(routesHandler)
   server.route({
     path: '/static/{param*}',
     method: 'GET',

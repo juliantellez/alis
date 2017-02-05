@@ -1,0 +1,59 @@
+$size-mobile:                 640px;     // Maximum mobile screen width
+$size-tablet:    $size-mobile + 1px;     // Minimum tablet screen width
+$size-desktop:                960px;     // Minimum desktop screen width
+$size-widescreen:            1200px;     // Minimum wide screen width
+$is-ie: false !default;
+$mobile-ie6: true !default;
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+@mixin media($size: false, $max-width: false, $min-width: false, $ignore-for-ie: false) {
+  @if $is-ie and ($ignore-for-ie == false) {
+    @if $size != mobile {
+      @if ($ie-version == 6 and $mobile-ie6 == false) or $ie-version > 6 {
+        @content;
+      }
+    }
+  } @else {
+    @if $size == widescreen {
+      @media (min-width: $size-widescreen){
+        @content;
+      }
+    } @else if $size == desktop {
+      @media (min-width: $size-desktop){
+        @content;
+      }
+    } @else if $size == tablet {
+      @media (min-width: $size-tablet){
+        @content;
+      }
+    } @else if $size == mobile {
+      @media (max-width: $size-mobile){
+        @content;
+      }
+    } @else if ($min-width != false and $max-width != false) {
+      @media (min-width: $min-width) and (max-width: $max-width){
+        @content;
+      }
+    } @else if $max-width != false {
+      @media (max-width: $max-width){
+        @content;
+      }
+    } @else if $min-width != false {
+      @media (min-width: $min-width){
+        @content;
+      }
+    } @else {
+      @media (min-width: $size){
+        @content
+      }
+    }
+  }
+}
+
