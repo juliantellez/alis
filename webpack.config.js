@@ -1,7 +1,7 @@
 import path from 'path'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
-import config from 'src/config'
+import config from 'scripts/config'
 
 const client = path.resolve(config.SRC, 'scripts/client/main.js')
 

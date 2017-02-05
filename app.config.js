@@ -3,7 +3,7 @@
 const path = require('path')
 
 const APP_PORT = 8000
-
+const BASE_URL = '/'
 const ENV = process.env.NODE_ENV || 'development'
 
 const SRC = path.join(__dirname, 'app')
@@ -32,6 +32,7 @@ const PATHS = {
 
 module.exports = {
   APP_PORT,
+  BASE_URL,
   SRC,
   DEST,
   STATIC,
