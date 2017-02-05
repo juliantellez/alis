@@ -1,0 +1,18 @@
+{
+  "presets": ["node6", "react", "stage-0"],
+  "plugins": ["add-module-exports", "lodash", "transform-flow-strip-types",
+    ["module-resolver", {
+    "root": ["./"],
+    "alias": {
+      "app": "./app",
+      "src": "./app/scripts",
+      "server": "./app/scripts/server",
+      "test": "./app/test"
+      }
+    }]
+  ],
+  "env": {
+    "production": {
+    }
+  }
+}

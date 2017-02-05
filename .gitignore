@@ -1,0 +1,33 @@
+build
+bower_components
+node_modules
+npm-debug.log
+yarn-error.log
+dist
+.awspublish*
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+# VS Code
+typings*
+jsconfig.json
+.vscode
+.project
+
+credentials
+
+!*/**/public/
+Dockerfile
+.idea
+
+# Flow
+flow-typed/
+sassconfig.json
+
+#visual Regression
+backstop.json
+test/visuals/visualReport/
+test/visuals/testLogs/

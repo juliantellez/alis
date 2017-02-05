@@ -1,0 +1,28 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+    "no-unused-expressions": 0,
+    "no-underscore-dangle": 0,
+    "camelcase": 0,
+    "react/no-multi-comp": 0
+  },
+  "globals": {
+    "React": true,
+    "ReactDOM": true,
+    "_": true,
+    "TestUtils": true,
+    "$R": true,
+    "expect": true,
+    "sinon": true,
+    "spy": true,
+    "sandbox": true,
+    "defer": true,
+    "mount": true,
+    "shallow": true,
+    "mountWrapper": true
+  }
+}

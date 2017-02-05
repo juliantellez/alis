@@ -1,0 +1,14 @@
+[ignore]
+.*/node_modules/gulp-flowtype/test/*
+
+[include]
+.*/app/scripts/**/*
+../app/scripts/
+
+[libs]
+
+[options]
+esproposal.class_static_fields=enable
+esproposal.class_instance_fields=enable
+module.name_mapper='^src\/\(.*\)$' -> '<PROJECT_ROOT>/app/scripts/\1'
+module.name_mapper='^server\/\(.*\)$' -> '<PROJECT_ROOT>/app/server/\1'
