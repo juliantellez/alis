@@ -1,5 +1,3 @@
-console.log('hola')
-
 import React from 'react'
 import ReactDOM from 'react-dom'
 import routes from 'scripts/routes/main'
