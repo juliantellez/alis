@@ -7,7 +7,7 @@ import About from 'scripts/pages/About'
 import Works from 'scripts/pages/Works'
 import Contact from 'scripts/pages/Contact'
 import NotFound from 'scripts/pages/NotFound'
-import Layout from 'scripts/components/Layout'
+import Layout from 'scripts/components/helpers/Layout'
 
 export default (
   <Route path={config.get('BASE_URL')} component={Layout}>

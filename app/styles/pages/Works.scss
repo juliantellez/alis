@@ -1,0 +1,11 @@
+.Works {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  &-img {
+    width: 100%;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}
