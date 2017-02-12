@@ -1,0 +1,9 @@
+.Footer {
+  display: flex;
+  justify-content: center;
+  &-link {
+    color: $greyish-brown;
+    font-size: $fontSize-small;
+    text-decoration: none;
+  }
+}
