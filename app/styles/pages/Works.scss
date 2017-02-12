@@ -2,10 +2,20 @@
   display: flex;
   flex-direction: column;
   padding-top: 10px;
-  &-img {
-    width: 100%;
+  @include media(tablet) {
+   flex-direction: row;
+   flex-wrap: wrap;
+  }
+  &-section {
     &:not(:last-child) {
       margin-bottom: 10px;
     }
+    @include media(tablet) {
+      width: 360px;
+    }
+  }
+  &-img {
+    width: 100%;
+    height: auto;
   }
 }

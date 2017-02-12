@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route, IndexRoute} from 'react-router'
+import {Route, IndexRoute, IndexRedirect} from 'react-router'
 
 import config from 'scripts/config'
 import Home from 'scripts/pages/Home'
@@ -11,7 +11,8 @@ import Layout from 'scripts/components/helpers/Layout'
 
 export default (
   <Route path={config.get('BASE_URL')} component={Layout}>
-    <IndexRoute component={Home}/>
+    <IndexRedirect to='/home' />
+    <Route path='home' component={Home} />
     <Route path='about' component={About} />
     <Route path='works' component={Works} />
     <Route path='contact' component={Contact} />
