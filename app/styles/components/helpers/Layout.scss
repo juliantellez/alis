@@ -1,8 +1,13 @@
 .Layout {
-  font-family: $fontFamily-base;
-  background-color: $pinkish-grey;
   width: 100%;
   height: 100%;
   padding: 15px;
-  overflow: scroll;
+
+  overflow: hidden;
+  overflow-y: scroll;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+  font-family: $fontFamily-base;
+  background-color: $pinkish-grey;
 }

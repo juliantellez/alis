@@ -1,24 +1,28 @@
 .Header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  @include media(tablet) {
+    padding-right: 25px;
+  }
   @include media(desktop) {
+    
     align-items: base-line;
   }
   &-logo {
-    width: 100px;
-    height: 40px;
+    width: 130px;
+    height: 65px;
     @include media(tablet) {
       width: 200px;
-      height: 60px;
+      height: 100px;
     }
   }
   &-burgermenu {
-    width: 30px;
-    height: 30px;
+    width: 45px;
+    height: 20px;
     @include media(tablet) {
-      width: 50px;
-      height: 20px;
+      width: 55px;
+      height: 23px;
     }
     @include media(desktop) {
       display: none;
@@ -32,13 +36,15 @@
     }
   }
   &-link {
-    color: $greyish-brown;
+    opacity: 0.8;
     font-size: 30px;
-    text-decoration: none;
-    border-bottom: 2px solid transparent;
     margin-left: 30px;
-    font-weight: $light;
     line-height: 31px;
+    font-weight: $light;
+    text-decoration: none;
+    color: $greyish-brown;
+    border-bottom: 2px solid transparent;
+    &:hover,
     &--active {
       border-bottom: 2px solid $greyish-brown;
     }
