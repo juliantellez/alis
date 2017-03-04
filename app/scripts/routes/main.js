@@ -9,9 +9,11 @@ import Contact from 'scripts/pages/Contact'
 import NotFound from 'scripts/pages/NotFound'
 import Layout from 'scripts/components/helpers/Layout'
 
+import RootComponent from './RootComponent'
+
 export default (
-  <Route path={config.get('BASE_URL')}>
-    <IndexRoute component={Home}/>
+  <Route path={config.get('BASE_URL')} component={RootComponent}>
+    <IndexRoute component={Home} />
     <Route path={config.get('BASE_URL')} component={Layout}>
       <Route path='about' component={About} />
       <Route path='works' component={Works} />

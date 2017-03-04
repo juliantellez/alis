@@ -24,14 +24,17 @@ export default {
           302, redirectLocation.pathname + redirectLocation.search)
       }
 
-      if (renderProps) {
-        const html = (
-          <Html title='ALI WAY'>
-            <RouterContext {...renderProps} />
-          </Html>
-        )
-        reply(ReactDOMServer.renderToStaticMarkup(html))
-      }
+      const content = ReactDOMServer.renderToString(
+        <RouterContext {...renderProps} />
+      )
+
+      const html = (
+        <Html title='ALI WAY'>
+          {content}
+        </Html>
+      )
+
+      reply(ReactDOMServer.renderToStaticMarkup(html))
     })
   },
 }
