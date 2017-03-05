@@ -30,3 +30,19 @@
     }
   }
 }
+
+.Contact-followMe {
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-bottom: 10px;
+    justify-content: center;
+  }
+
+  &-icon {
+    width: 63px;
+    margin: 5px;
+    height: 57px;
+  }
+}
