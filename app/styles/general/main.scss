@@ -6,3 +6,10 @@
   font-family: $fontFamily-base;
   background-color: $color-grey-pink;
 }
+
+@mixin title ($color: $color-grey-warm) {
+  padding: 10px;
+  color: $color;
+  font-size: 18px;
+  text-align: center;
+}

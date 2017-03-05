@@ -10,11 +10,8 @@
     justify-content: center;
   }
   &-title {
-    padding: 10px;
-    font-size: 18px;
+    @include title();
     max-width: 200px;
-    text-align: center;
-    color: $color-grey-warm;
   }
   &-ali {
     height: 130px;
