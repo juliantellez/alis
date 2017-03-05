@@ -3,20 +3,6 @@ import React from 'react'
 const cls = elm => `About-${elm}`
 
 export default class About extends React.Component {
-
-  _getAboutMe () {
-    return (
-      <div className={cls('section')}>
-        <div className={cls('title')}>
-          All you need to know about me
-        </div>
-        <div className={cls('content')}>
-          <img src='/static/images/pages/skills.png'/>
-        </div>
-      </div>
-    )
-  }
-
   _getCanBeFound (text, percentage) {
     return (
       <div className={cls('content-wrapper-section')}>
