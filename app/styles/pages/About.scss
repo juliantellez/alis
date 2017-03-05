@@ -1,0 +1,27 @@
+.About {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  &-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &-title {
+    padding: 10px;
+    font-size: 18px;
+    max-width: 200px;
+    text-align: center;
+    color: $color-grey-warm;
+  }
+  &-ali {
+    height: 130px;
+    width: 130px;
+  }
+  &-essentials {
+    width: 236px;
+    height: 142px;
+  }
+}

@@ -7,6 +7,9 @@ import Modal from 'scripts/components/header/LinksModal'
 const cls = elm => `Home-${elm}`
 
 export default class Home extends React.Component {
+  static contexTypes = {
+    store: React.PropTypes.object,
+  }
   render () {
     return (
       <div className='Home'>

@@ -1,12 +1,30 @@
 import React from 'react'
 
+import env from 'scripts/utils/env'
+import store from 'scripts/store/main'
+
 export default class RootComponent extends React.Component {
+  static propTypes = {
+    env: React.PropTypes.object,
+    store: React.PropTypes.object,
+  }
+
+  static defaultProps = {
+    env,
+    store,
+  }
+
   static childContextTypes = {
-    // TODO
+    env: React.PropTypes.object,
+    store: React.PropTypes.object,
   }
 
   getChildContext () {
-    // TODO
+    const {store, env} = this.props
+    return {
+      env,
+      store,
+    }
   }
 
   render () {

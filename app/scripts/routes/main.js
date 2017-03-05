@@ -1,7 +1,9 @@
 import React from 'react'
 import {Route, IndexRoute} from 'react-router'
 
-import config from 'scripts/config'
+import store from 'scripts/store/main'
+import env from 'scripts/utils/env'
+
 import Home from 'scripts/pages/Home'
 import About from 'scripts/pages/About'
 import Works from 'scripts/pages/Works'
@@ -11,14 +13,25 @@ import Layout from 'scripts/components/helpers/Layout'
 
 import RootComponent from './RootComponent'
 
+const onEnter = (nextState, replace, done) => {
+  switch (env.isBrowser()) {
+    case true: {
+      store.dispatch({type: 'SET_ROUTE', state: nextState})
+      done()
+    }
+      break
+    default: done()
+  }
+}
+
 export default (
-  <Route path={config.get('BASE_URL')} component={RootComponent}>
-    <IndexRoute component={Home} />
-    <Route path={config.get('BASE_URL')} component={Layout}>
-      <Route path='about' component={About} />
-      <Route path='works' component={Works} />
-      <Route path='contact' component={Contact} />
-      <Route path='*' component={NotFound} />
+  <Route path='/' component={RootComponent}>
+    <IndexRoute component={Home} onEnter={onEnter}/>
+    <Route component={Layout}>
+      <Route path='about' component={About} onEnter={onEnter} />
+      <Route path='works' component={Works} onEnter={onEnter} />
+      <Route path='contact' component={Contact} onEnter={onEnter} />
+      <Route path='*' component={NotFound} onEnter={onEnter} />
     </Route>
   </Route>
 )

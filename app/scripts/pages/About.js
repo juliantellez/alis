@@ -1,13 +1,50 @@
 import React from 'react'
 
+// import Skills from './about/components/Skills'
+// import AboutMe from './about/components/AboutMe'
+// import CanBeFound from './about/components/CanBeFound'
+// import LifeEssentials from './about/components/LifeEssentials'
+
 const cls = elm => `About-${elm}`
 
 export default class About extends React.Component {
+
+  _getAboutMe () {
+    return (
+      <div className={cls('section')}>
+        <div className={cls('title')}>
+          All you need to know about me
+        </div>
+        <div className={cls('content')}>
+          <img src='/static/images/pages/skills.png'/>
+        </div>
+      </div>
+    )
+  }
+
   render () {
     return (
       <div className='About'>
-        <div className={cls('title')}>All you need to know about me</div>
-        <div className={cls('content')}>
+        <div className={cls('section aboutMe')}>
+          <div className={cls('title')}>All you need to know about me</div>
+          <div className={cls('content')}>
+            <img className={cls('ali')} src='/static/images/pages/ali.png'/>
+          </div>
+        </div>
+
+        <div className={cls('section lifeEssentials')}>
+          <div className={cls('title')}>Life essentials</div>
+          <div className={cls('content')}>
+            <img className={cls('essentials')} src='/static/images/pages/essentialsMobile.png'/>
+          </div>
+        </div>
+
+        <div className={cls('section canBeFound')}>
+          <div className={cls('title')}>Can be found</div>
+          <div className={cls('content')}>
+            <div></div>
+            <div className={cls('percentage')}>%</div>
+          </div>
         </div>
       </div>
     )

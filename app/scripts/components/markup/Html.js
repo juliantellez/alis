@@ -15,7 +15,7 @@ export default class Html extends React.Component {
         <link rel='stylesheet' type='text/css' href='/static/styles/main.css' />
         </head>
         <body>
-          <div id='main'>{this.props.children}</div>
+          <div id='main' dangerouslySetInnerHTML={{__html: this.props.children}} />
           <script src='/static/bundles/client.js'></script>
         </body>
       </html>

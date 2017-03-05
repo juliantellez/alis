@@ -6,35 +6,38 @@ import { match, RouterContext } from 'react-router'
 
 import routes from './main'
 import config from 'scripts/config'
+import env from 'scripts/utils/env'
+import store from 'scripts/store/main'
 
 import Html from 'scripts/components/markup/Html'
+
+const createElement = (component, routeProps) => {
+  return React.createElement(component, {...routeProps, store, env})
+}
 
 export default {
   method: 'GET',
   path: path.normalize(path.join(config.get('BASE_URL'), '/{path*}')),
   handler: (request: Function, reply: Function) => {
     const location = request.url
-    match({routes, location}, (e, redirectLocation, renderProps) => {
-      if (e) {
-        reply(new Error(e))
-      }
+    Promise.resolve([
+      store.dispatch({type: 'SET_ROUTE', state: request}),
+    ])
+    .then(
+      match({routes, location}, (e, redirectLocation, props) => {
+        const content = ReactDOMServer.renderToString(
+          <RouterContext {...props} createElement={createElement} />
+        )
 
-      if (redirectLocation) {
-        return reply.redirect(
-          302, redirectLocation.pathname + redirectLocation.search)
-      }
+        const html = (
+          <Html title='ALI WAY'>
+            {content}
+          </Html>
+        )
 
-      const content = ReactDOMServer.renderToString(
-        <RouterContext {...renderProps} />
-      )
-
-      const html = (
-        <Html title='ALI WAY'>
-          {content}
-        </Html>
-      )
-
-      reply(ReactDOMServer.renderToStaticMarkup(html))
-    })
+        reply(ReactDOMServer.renderToStaticMarkup(html))
+      })
+    )
+    .catch(e => reply(new Error(e)))
   },
 }

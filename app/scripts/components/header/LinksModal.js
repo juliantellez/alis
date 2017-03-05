@@ -8,9 +8,27 @@ import BurgerMenu from 'scripts/components/icons/BurgerMenu'
 const cls = elem => `LinksModal-${elem}`
 
 export default class LinksModal extends React.Component {
+  static contextTypes = {
+    env: React.PropTypes.object,
+    store: React.PropTypes.object,
+  }
+
   state = {}
 
+  componentWillMount () {
+    const {env, store} = this.context
+    if (!env.isBrowser()) {
+      return
+    }
+    this.unsubscribe = store.subscribe(this._closeModal)
+  }
+
+  componentWillUnmount () {
+    this.unsubscribe()
+  }
+
   _closeModal = () => this.setState({modalIsOpen: false})
+
   _onClick = () => this.setState({modalIsOpen: true})
 
   _getModal () {
