@@ -6,9 +6,6 @@
       width: 55px;
       height: 23px;
     }
-    @include media(desktop) {
-      display: none;
-    }
     &:hover {
       cursor: pointer;
     }

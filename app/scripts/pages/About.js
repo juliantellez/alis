@@ -1,10 +1,5 @@
 import React from 'react'
 
-// import Skills from './about/components/Skills'
-// import AboutMe from './about/components/AboutMe'
-// import CanBeFound from './about/components/CanBeFound'
-// import LifeEssentials from './about/components/LifeEssentials'
-
 const cls = elm => `About-${elm}`
 
 export default class About extends React.Component {
@@ -18,6 +13,15 @@ export default class About extends React.Component {
         <div className={cls('content')}>
           <img src='/static/images/pages/skills.png'/>
         </div>
+      </div>
+    )
+  }
+
+  _getCanBeFound (text, percentage) {
+    return (
+      <div className={cls('content-wrapper-section')}>
+        <span className={cls('content-wrapper-text')}>{text}</span>
+        <span className={cls('content-wrapper-percentage')}>{percentage}</span>
       </div>
     )
   }
@@ -42,7 +46,11 @@ export default class About extends React.Component {
         <div className={cls('section canBeFound')}>
           <div className={cls('title')}>Can be found</div>
           <div className={cls('content')}>
-            <div></div>
+            <div className={cls('content-wrapper')}>
+              {this._getCanBeFound('• Working on projects', '50')}
+              {this._getCanBeFound('• Finding design inspiration', '20')}
+              {this._getCanBeFound('• Sleping', '30')}
+            </div>
             <div className={cls('percentage')}>%</div>
           </div>
         </div>

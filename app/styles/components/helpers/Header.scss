@@ -26,4 +26,9 @@
       margin-left: 30px;
     }
   }
+  &-modal {
+    @include media(desktop) {
+      display: none;
+    }
+  }
 }

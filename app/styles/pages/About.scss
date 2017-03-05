@@ -24,4 +24,25 @@
     width: 236px;
     height: 142px;
   }
+  &-percentage {
+    font-size: 50px;
+    padding-left: 20px;
+  }
+  &-content {
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    color: $color-grey-warm;
+    justify-content: space-between;
+    &-wrapper {
+      &-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      &-percentage {
+        padding-left: 10px;
+      }
+    }
+  }
 }
