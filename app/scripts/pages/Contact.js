@@ -8,6 +8,8 @@ import Facebook from 'scripts/components/icons/Facebook'
 import LinkedIn from 'scripts/components/icons/LinkedIn'
 import Pinterest from 'scripts/components/icons/Pinterest'
 
+import ContactMe from './contact/components/ContactMe'
+
 const cls = elem => `Contact-${elem}`
 
 export default class Contact extends React.Component {
@@ -22,7 +24,7 @@ export default class Contact extends React.Component {
   render () {
     return (
       <div className='Contact'>
-      <div className={cls('title')} >Contac Me</div>
+      <ContactMe />
       <div className={cls('getInTouch')}>
         <div className={cls('title')} >Get in touch</div>
         <div className={cls('getInTouch-content')}>
