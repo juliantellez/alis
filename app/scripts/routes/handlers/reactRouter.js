@@ -4,10 +4,10 @@ import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { match, RouterContext } from 'react-router'
 
-import routes from './main'
-import config from 'scripts/config'
 import env from 'scripts/utils/env'
+import config from 'scripts/config'
 import store from 'scripts/store/main'
+import routes from 'scripts/routes/main'
 
 import Html from 'scripts/components/markup/Html'
 

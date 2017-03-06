@@ -1,0 +1,20 @@
+.Input {
+  padding-bottom: 15px;
+  &-field {
+    padding: 5px;
+    width: 237px;
+    height: 38px;
+    border: $boder;
+    background-color: $color-beige;
+    &::placeholder {
+      font-size: 14px;
+      color: $color-brown-grey;
+    }
+  }
+  &-error {
+    padding: 2px;
+    font-size: 12px;
+    color: $color-red;
+    text-align: center;
+  }
+}

@@ -3,7 +3,9 @@ import inert from 'inert'
 
 import config from 'scripts/config'
 import goodPlugin from './plugins/good'
-import routesHandler from 'scripts/routes/handler'
+import mailHandler from 'scripts/routes/handlers/mailSender'
+import routerHandler from 'scripts/routes/handlers/reactRouter'
+import staticFilesHandler from 'scripts/routes/handlers/staticFiles'
 
 const plugins = [
   inert,
@@ -19,18 +21,9 @@ server.register(plugins, e => {
     throw new Error(e)
   }
 
-  server.route(routesHandler)
-  server.route({
-    path: '/static/{param*}',
-    method: 'GET',
-    handler: {
-      directory: {
-        path: config.STATIC,
-        listing: true,
-        index: false,
-      },
-    },
-  })
+  server.route(mailHandler)
+  server.route(routerHandler)
+  server.route(staticFilesHandler)
 
   server.start(e => {
     console.log(`Server running on: ${server.info.port}`)
