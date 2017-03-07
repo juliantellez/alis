@@ -1,8 +1,7 @@
 import Formsy from 'formsy-react'
 import Input from 'scripts/pages/contact/components/Input'
-import nodeMailer from 'server/services/nodeMailer'
 
-describe.only('<Input />', () => {
+describe('<Input />', () => {
   it('renders', () => {
     const wrapper = mount(
       <Formsy.Form>
