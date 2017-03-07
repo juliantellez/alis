@@ -8,7 +8,6 @@ global.jsdom = jsdom.jsdom(
   }
 )
 global.document = global.jsdom
-global.document.documentElement.clientHeight = 500
 global.window = global.document.defaultView
 global.navigator = global.window.navigator
 global.location = global.window.location

@@ -11,11 +11,11 @@ export default class Html extends React.Component {
         <head>
         <title>{this.props.title}</title>
         <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1' />
-        <link rel='icon' type='image/x-icon' href='/static/images/aliway.ico' />
+        <link rel='icon' type='image/x-icon' href='/static/images/favicon.ico' />
         <link rel='stylesheet' type='text/css' href='/static/styles/main.css' />
         </head>
         <body>
-          <div id='main'>{this.props.children}</div>
+          <div id='main' dangerouslySetInnerHTML={{__html: this.props.children}} />
           <script src='/static/bundles/client.js'></script>
         </body>
       </html>

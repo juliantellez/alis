@@ -1,0 +1,45 @@
+.About {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  &-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &-title {
+    @include title();
+    max-width: 200px;
+  }
+  &-ali {
+    height: 130px;
+    width: 130px;
+  }
+  &-essentials {
+    width: 236px;
+    height: 142px;
+  }
+  &-percentage {
+    font-size: 50px;
+    padding-left: 20px;
+  }
+  &-content {
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    color: $color-grey-warm;
+    justify-content: space-between;
+    &-wrapper {
+      &-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      &-percentage {
+        padding-left: 10px;
+      }
+    }
+  }
+}

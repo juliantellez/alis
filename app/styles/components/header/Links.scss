@@ -1,0 +1,15 @@
+.Links {
+  &-link {
+    opacity: 0.8;
+    font-size: 30px;
+    line-height: 31px;
+    font-weight: $light;
+    text-decoration: none;
+    color: $color-brown-grey;
+    border-bottom: 2px solid transparent;
+    &:hover,
+    &--active {
+      border-bottom: 2px solid $color-brown-grey;
+    }
+  }
+}

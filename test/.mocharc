@@ -8,4 +8,4 @@
 
 --require ./test/globals/bootstrap.js
 
-./test/app/**/*.spec.js
+./test/**/*.spec.js

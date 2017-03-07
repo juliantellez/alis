@@ -1,117 +1,48 @@
 .Home {
   width: 100%;
   height: 100%;
-  padding: 0 10px;
-  overflow: scroll;
-  position: relative;
-
-  @include media (tablet) {
-    padding: 30px;
-  }
+  padding: 15px;
+  background-color: $color-grey-pink;
   &-content {
-    @include media(tablet) {
-      display: flex;
-      justify-content: space-between;
-    }
-    &-text {
-      color: $greyish-brown;
-      font-size: 36px;
-      white-space: pre-line;
-      display: none;
-      @include media(tablet) {
-        display: flex;
-        max-width: 50%;
-        padding-top: 20px;
-      }
-      @include media(tablet) {
-        max-width: 66%;
-      }
-    }
-  }
-  &-tabs {
-    @include media(tablet) {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 15px;
+    border-radius: 5px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border: 20px solid $color-grey-light;
   }
   &-icon {
-    position: absolute;
+    width: 190px;
+    height: 200px;
+    margin-top: auto;
+  }
+  &-text {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 15px;
+    color: $color-grey-warm;
     @include media(tablet) {
-      position: initial;
+      font-size: 24px;
+      max-width: 460px;
+      padding-top: 40px;
+      padding-bottom: 70px;
     }
-    @include media (desktop) {
-      position: absolute;
+  }
+  &-button {
+    width: 50px;
+    height: 20px;
+    transition: height .2s ease-in, width .2s ease-in;
+    &:hover {
+      height: 21px;
+      width: 55px;
+      cursor: pointer;
     }
-    &--home {
-      height: 35%;
-      top: 2%;
-      left: 5%;
-      @include media (desktop) {
-        height: 270px;
-        right: 10%;
-        left: initial;
-        top: 5%;
-      }
-    }
-    &--about {
-      height: 24%;
-      top: 31%;
-      right: 3%;
-      @include media (tablet) {
-        height: 200px;
-        right: 31%;
-        left: initial;
-        top: 45%;
-      }
-      @include media (desktop) {
-        right: 10%;
-      }
-      @include media (widescreen) {
-        right: 31%;
-      }
-    }
-    &--works {
-      height: 22%;
-      top: 51%;
-      left: 3%;
-      @include media (tablet) {
-        transform: rotate(-51deg);
-        margin-top: 62px;
-      }
-      @include media (desktop) {
-        height: 200px;
-        left: 8%;
-        top: 55%;
-      }
-    }
-    &--contact {
-      top: 73%;
-      height: 21%;
-      right: 6%;
-      @include media (tablet) {
-        position: absolute;
-        left: 3%;
-        top: 76%;
-      }
-      @include media (desktop) {
-        left: initial;
-        right: 10%;
-      }
-    }
-    &--logo {
-      position: fixed;
-      bottom: 0;
-      width: 26%;
-      height: 7%;
-      @include media (tablet) {
-        position: initial;
-        width: initial;
-        height: 40px;
-      }
-      @include media (desktop) {
-        height: 60px;
-      }
-    }
+  }
+  .Footer {
+    margin-top: auto;
   }
 }

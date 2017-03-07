@@ -1,0 +1,21 @@
+.ContactMe {
+  &-title {
+    @include title();
+  }
+  &-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &-message {
+    .Input-field {
+      height: 100px;
+    }
+  }
+  &-button {
+    border: $boder;
+    border-radius: 6px;
+    padding: 10px 50px;
+  }
+}
