@@ -10,12 +10,9 @@ RUN apt-get update && \
 # Todo use github deploy key
 ADD credentials /root/.aws/credentials
 RUN mkdir -p /root/.ssh/
-RUN aws s3 cp s3://findapro-container-deploy/github_findapro_container_key /root/.ssh/
-RUN chmod 700 /root/.ssh/github_findapro_container_key
 RUN chown -R root:root /root/.ssh
 # Remove host checking for github
 RUN touch /root/.ssh/known_hosts
-RUN echo "Host github.com\n\tStrictHostKeyChecking no\n\tIdentityFile /root/.ssh/github_findapro_container_key\n" >> /root/.ssh/config
 
 # Create some needed directories
 RUN mkdir -p /srv/
@@ -24,19 +21,11 @@ WORKDIR /srv/
 # setup path
 ENV PATH /srv/node_modules/.bin:$PATH
 
-# setup npm chache registry
-RUN npm config set fetch-retries 10 && \
-    npm set registry http://jenkins.plentific.com:4873/
-
 # Setup srv
 ADD package.json /srv/
 RUN cd /srv && npm install
 ADD . /srv/
 
-ARG PLENTIFIC_ENV
 ARG NODE_ENV
-ARG AUTH_FINDAPRO_TOKEN
 
 ENV NODE_ENV ${NODE_ENV:-production}
-ENV PLENTIFIC_ENV ${PLENTIFIC_ENV:-dev}
-ENV AUTH_FINDAPRO_TOKEN ${AUTH_FINDAPRO_TOKEN}

@@ -11,7 +11,7 @@ const post = (url, manager, method, data = {}) => {
     .send(data)
     .end((e, res) => {
       const hasError = !_.isEmpty(e)
-      return hasError ? reject(new Error(e)) : resolve(I.fromJS(res.body.response))
+      return hasError ? reject(new Error(e)) : resolve(I.fromJS(res))
     })
   })
 }
