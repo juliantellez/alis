@@ -3,7 +3,7 @@ set -e
 
 SCRIPTS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-APP="emails"
+APP="alisporfolio"
 AWS_ECR="092411751800.dkr.ecr.eu-west-1.amazonaws.com"
 DOCKER_IMAGE_TAG=$AWS_ECR/$APP:$BUILD_TAG
 

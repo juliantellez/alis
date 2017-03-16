@@ -4,7 +4,6 @@ set -e
 SCRIPTS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 NODE_ENV="production"
-AUTH_FINDAPRO_TOKEN="$AUTH_FINDAPRO_TOKEN"
 
 . ${SCRIPTS_DIR}/_init.sh
 

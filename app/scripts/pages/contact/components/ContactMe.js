@@ -1,6 +1,11 @@
+import _ from 'lodash'
 import React from 'react'
 import Formsy from 'formsy-react'
+
+import Spinner from 'scripts/components/helpers/Spinner'
+import mailSenderManager from 'scripts/api/managers/mailSender'
 import Input from './Input'
+
 const cls = elem => `ContactMe-${elem}`
 
 export default class ContactMe extends React.Component {
@@ -9,9 +14,58 @@ export default class ContactMe extends React.Component {
     store: React.PropTypes.object,
   }
 
-  _onValidSubmit (data) {
-    console.log(data)
-    //https://whatsmate.github.io/2016-02-17-send-whatsapp-message-nodejs/
+  state = {
+    notify: 'An error ocurred :( , please send an emails instead',
+  }
+
+  _onValidSubmit = data => {
+    this.setState({isSubmitting: true})
+    mailSenderManager.send(data)
+    .then(res => {
+      this.setState({
+        isSubmitting: false,
+        notify: 'Your message has been sent',
+      })
+    })
+    .catch(e => {
+      this.setState({
+        isSubmitting: false,
+        notify: 'An error ocurred :( , please send an email instead',
+      })
+    })
+  }
+
+  _getNotifications () {
+    const {notify} = this.state
+    if (_.isNil(notify)) {
+      return null
+    }
+    return (
+      <div className={cls('notification')}>
+        {notify}
+      </div>
+    )
+  }
+  _getButton () {
+    const {isSubmitting} = this.state
+    const text = (
+      <div className={cls('button-text')} key={'buttonText'}>
+        Send
+      </div>
+    )
+
+    let content = text
+    if (isSubmitting) {
+      content = [
+        text,
+        <Spinner className={cls('button-spinner')} key={'buttonSpinner'} />,
+      ]
+    }
+    return (
+      <button className={cls('button')}>
+        {content}
+      </button>
+    )
   }
 
   render () {
@@ -51,12 +105,9 @@ export default class ContactMe extends React.Component {
             placeHolder='A short message'
             validationError='This field is Empty'
           />
-          <button
-            className={cls('button')}
-          >
-            Send
-          </button>
+          {this._getButton()}
         </Formsy.Form>
+        {this._getNotifications()}
       </div>
     )
   }

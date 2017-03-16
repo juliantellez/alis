@@ -6,10 +6,10 @@ import {DEST, BASE_URL, PATHS, STATIC} from '../app.config'
 
 const $ = plugins()
 
-const PLENTIFIC_ENV = process.env.PLENTIFIC_ENV || 'dev'
+const env = process.env.NODE_ENV || 'dev'
 
 const S3 = {
-  BUCKET: `plentific-emails-${PLENTIFIC_ENV}`,
+  BUCKET: `aliway-portfolio-${env}`,
   REGION: 'eu-west-1',
 }
 
@@ -32,11 +32,11 @@ const getRevUrlsOptions = () => ({
 
 gulp.task('revision:images', () =>
   gulp.src('/**/*', {root: PATHS.images.dest})
-    .pipe($.rev())
-    .pipe($.revDeleteOriginal())
-    .pipe(gulp.dest(DEST))
-    .pipe($.rev.manifest(MANIFEST_PATH, {merge: true}))
-    .pipe(gulp.dest(DEST))
+  .pipe($.rev())
+  .pipe($.revDeleteOriginal())
+  .pipe(gulp.dest(DEST))
+  .pipe($.rev.manifest(MANIFEST_PATH, {merge: true}))
+  .pipe(gulp.dest(DEST))
 )
 
 gulp.task('revision:bundles', () =>

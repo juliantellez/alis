@@ -17,5 +17,10 @@
     border: $boder;
     border-radius: 6px;
     padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    &-text {
+      padding-right: 5px;
+    }
   }
 }

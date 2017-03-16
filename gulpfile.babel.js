@@ -12,9 +12,6 @@ import {PATHS, DEST} from './app.config'
 const $ = plugins()
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development'
-const isProduction = process.env.NODE_ENV === 'production'
-const defaultPlentificEnv = isProduction ? 'dev' : 'local'
-process.env.PLENTIFIC_ENV = process.env.PLENTIFIC_ENV || defaultPlentificEnv
 
 const toGlob = src => path.join(path.dirname(src), '**/*')
 

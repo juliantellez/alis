@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import nodemailer from 'nodemailer'
 
 const createEmail = (fr, to, subject, html) => ({from: fr, to, subject, html})
@@ -13,11 +14,7 @@ const sendMail = (transport, mail) => {
   const transporter = nodemailer.createTransport(transport)
   return new Promise((resolve, reject) => {
     transporter.sendMail(mail, (e, res) => {
-      if (e) {
-        reject()
-      } else if (res) {
-        resolve()
-      }
+      return !_.isNil(e) ? reject(e) : resolve(res)
     })
   })
 }
