@@ -1,6 +1,6 @@
 import {api} from 'scripts/api/request'
 
-describe.only('API', () => {
+describe('API', () => {
   it('posts', () => {
     const payload = {
       email: 'donjulio@gmail.com',
