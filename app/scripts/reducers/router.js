@@ -11,7 +11,7 @@ const setRoute = (prevState = {}, nextState = {}) => {
 
 const router = (state = {}, action) => {
   const types = {
-    'SET_ROUTE': setRoute(state, action.state),
+    SET_ROUTE: setRoute(state, action.state),
   }
   return types[action.type] || state
 }

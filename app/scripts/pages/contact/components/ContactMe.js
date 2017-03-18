@@ -1,7 +1,7 @@
-import _ from 'lodash'
 import React from 'react'
 import Formsy from 'formsy-react'
 
+import {Link} from 'react-router'
 import Spinner from 'scripts/components/helpers/Spinner'
 import mailSenderManager from 'scripts/api/managers/mailSender'
 import Input from './Input'
@@ -14,38 +14,44 @@ export default class ContactMe extends React.Component {
     store: React.PropTypes.object,
   }
 
-  state = {
-    notify: 'An error ocurred :( , please send an emails instead',
+  state = {}
+
+  _setNotification = content => {
+    const {store} = this.context
+    store.dispatch({
+      type: 'SET_NOTIFICATION',
+      state: {content},
+    })
+  }
+
+  _errorMessage () {
+    return (
+      <span>
+        There was an error posting you message ☝, {' '}
+        <Link
+          className={cls('error')}
+          href='mailto:jgubina@gmail.com?Subject=Hi%20Ali'
+          target='_blank'
+        >
+          please send an email instead
+        </Link>
+      </span>
+    )
   }
 
   _onValidSubmit = data => {
     this.setState({isSubmitting: true})
     mailSenderManager.send(data)
     .then(res => {
-      this.setState({
-        isSubmitting: false,
-        notify: 'Your message has been sent',
-      })
+      this.setState({isSubmitting: false})
+      this._setNotification('Message Sent ✌')
     })
     .catch(e => {
-      this.setState({
-        isSubmitting: false,
-        notify: 'An error ocurred :( , please send an email instead',
-      })
+      this.setState({isSubmitting: false})
+      this._setNotification(this._errorMessage())
     })
   }
 
-  _getNotifications () {
-    const {notify} = this.state
-    if (_.isNil(notify)) {
-      return null
-    }
-    return (
-      <div className={cls('notification')}>
-        {notify}
-      </div>
-    )
-  }
   _getButton () {
     const {isSubmitting} = this.state
     const text = (
@@ -107,7 +113,6 @@ export default class ContactMe extends React.Component {
           />
           {this._getButton()}
         </Formsy.Form>
-        {this._getNotifications()}
       </div>
     )
   }
