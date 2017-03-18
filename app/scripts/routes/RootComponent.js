@@ -3,6 +3,8 @@ import React from 'react'
 import env from 'scripts/utils/env'
 import store from 'scripts/store/main'
 
+import Notifications from 'scripts/components/helpers/Notifications'
+
 export default class RootComponent extends React.Component {
   static propTypes = {
     env: React.PropTypes.object,
@@ -31,6 +33,7 @@ export default class RootComponent extends React.Component {
     return (
       <div className='Root'>
         {this.props.children}
+        <Notifications />
       </div>
     )
   }

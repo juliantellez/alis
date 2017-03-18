@@ -1,0 +1,31 @@
+@mixin closeIcon ($color: $color-white, $size: 15px) {
+  opacity: .5;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: $size;
+  height: $size;
+  overflow: hidden;
+  transition: transform .3s ease-in;
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: $color;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+  &:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+  }
+}

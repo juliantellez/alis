@@ -1,0 +1,24 @@
+.Notification {
+  width: 100%;
+  bottom: -100px;
+  position: fixed;
+  background-color: $color-blue-marine;
+  transition: bottom .5s cubic-bezier(.455,.03,.515,.955);
+  &-button {
+    @include closeIcon();
+  }
+  &-wrapper {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &-content {
+    width: 100%;
+    text-align: center;
+    color: $color-white;
+  }
+  &--isOpen {
+    bottom: 0
+  }
+}
