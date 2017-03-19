@@ -23,10 +23,6 @@
     path:last-child {
       stroke-width: 6px;
     }
-    @include media(tablet) {
-      // width: 200px;
-      // height: 100px;
-    }
   }
   &-links {
     display: none;
