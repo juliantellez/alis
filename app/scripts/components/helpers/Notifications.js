@@ -37,7 +37,11 @@ export default class Notification extends React.Component {
 
   _canRender () {
     const {notification} = this.state
-    return !_.isEmpty(notification)
+    const hasContent = notification && notification.content
+    return (
+      !_.isEmpty(notification) &&
+      hasContent
+    )
   }
 
   _getContent () {

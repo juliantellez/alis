@@ -11,7 +11,7 @@ import Contact from 'scripts/pages/Contact'
 import NotFound from 'scripts/pages/NotFound'
 import Layout from 'scripts/components/helpers/Layout'
 
-import RootComponent from './RootComponent'
+import RootComponent from 'scripts/components/RootComponent'
 
 const onEnter = (nextState, replace, done) => {
   switch (env.isBrowser()) {

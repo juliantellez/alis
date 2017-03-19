@@ -14,7 +14,7 @@
   &-modal {
     height: 100vh;
     padding: 15px;
-    background-color: $color-grey-pink;
+    background-color: $color-white;
 
     .Links {
       width: 100%;
@@ -25,7 +25,7 @@
       align-items: center;
       flex-direction: column;
       justify-content: center;
-      border: 20px solid $color-grey-light;
+      border: 20px solid $color-light-blue-grey;
     }
   }
 }
