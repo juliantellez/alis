@@ -12,9 +12,11 @@
   }
 
   &-modal {
-    height: 100vh;
+    width: 100%;
     padding: 15px;
-    background-color: $color-white;
+    height: 100vh;
+    background: url(encodeSvg(svg-background()));
+    background-size: cover;
 
     .Links {
       width: 100%;
