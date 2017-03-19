@@ -6,9 +6,9 @@ import Spinner from 'scripts/components/helpers/Spinner'
 import mailSenderManager from 'scripts/api/managers/mailSender'
 import Input from './Input'
 
-const cls = elem => `ContactMe-${elem}`
+const cls = elem => `ContactForm-${elem}`
 
-export default class ContactMe extends React.Component {
+export default class ContactForm extends React.Component {
   static contextTypes = {
     env: React.PropTypes.object,
     store: React.PropTypes.object,
@@ -76,8 +76,7 @@ export default class ContactMe extends React.Component {
 
   render () {
     return (
-      <div className='ContactMe' >
-        <div className={cls('title')} >Contac Me</div>
+      <div className='ContactForm' >
         <Formsy.Form
           className={cls('form')}
           onValidSubmit={this._onValidSubmit}

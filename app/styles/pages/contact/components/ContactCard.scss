@@ -1,0 +1,23 @@
+.ContactCard {
+  padding: 25px 30px;
+  background: url(encodeSvg(svg-frame()));
+  background-repeat: no-repeat;
+  &-section {
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+  }
+  &-icon {
+    width: 20px;
+    height: 20px;
+  }
+  &-text {
+    width: 220px;
+    font-size: 14px;
+    padding-left: 30px;
+    color: $greyish-brown;
+  }
+  &-link {
+    color: $greyish-brown;
+  }
+}
