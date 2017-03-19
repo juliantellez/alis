@@ -6,7 +6,8 @@
   background: url(encodeSvg(svg-headerBackground()));
   background-size: cover;
   background-position: 0 95%;
-  padding-bottom: 55px;
+  padding: 10px;
+  padding-bottom: 70px;
   @include media(tablet) {
     padding-right: 25px;
   }
@@ -14,11 +15,17 @@
     align-items: base-line;
   }
   &-logo {
-    width: 130px;
-    height: 65px;
+    width: 165px;
+    height: 79px;
+    g {
+      stroke-width: 4px;
+    }
+    path:last-child {
+      stroke-width: 6px;
+    }
     @include media(tablet) {
-      width: 200px;
-      height: 100px;
+      // width: 200px;
+      // height: 100px;
     }
   }
   &-links {

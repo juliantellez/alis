@@ -5,11 +5,13 @@
     line-height: 31px;
     font-weight: $light;
     text-decoration: none;
-    color: $color-brown-grey;
+    color: $color-blue-marine;
     border-bottom: 2px solid transparent;
+    transition: color .5s ease-in;
     &:hover,
     &--active {
-      border-bottom: 2px solid $color-brown-grey;
+      color: $color-blue-green;
+      border-bottom: 2px solid $color-blue-green;
     }
   }
 }

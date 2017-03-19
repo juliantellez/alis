@@ -30,7 +30,7 @@
       border: 20px solid $color-light-blue-grey;
     }
     &-button {
-      @include closeIcon($size: 30px, $opacity: 1);
+      @include cancelIcon($size: 30px, $opacity: 1);
       position: absolute;
       right: 15%;
       top: 10%;
