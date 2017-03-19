@@ -39,6 +39,7 @@ export default class LinksModal extends React.Component {
       isOpen={this.state.modalIsOpen}
       onRequestClose={this._closeModal}
       >
+        <div className={cls('modal-button')} onClick={this._closeModal} />
         <Links />
       </Modal>
     )
