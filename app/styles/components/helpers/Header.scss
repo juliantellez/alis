@@ -15,8 +15,9 @@
     align-items: base-line;
   }
   &-logo {
-    width: 165px;
-    height: 79px;
+    width: 120px;
+    height: 60px;
+    margin-left: 20px;
     g {
       stroke-width: 4px;
     }
@@ -28,10 +29,13 @@
     display: none;
     @include media (desktop) {
       display: flex;
+      margin-right: 30px;
       justify-content: space-between;
     }
-    .Links-link {
-      margin-left: 30px;
+    .Links {
+      &-link {
+        margin-left: 85px;
+      }
     }
   }
   &-modal {

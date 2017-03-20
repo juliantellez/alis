@@ -2,35 +2,31 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin: 50px auto;
+  @include media (tablet) {
+    max-width: 600px;
+  }
+  @include media (desktop) {
+    max-width: 1000px; 
+  }
+
   &-title {
     font-size: 18px;
     font-weight: 700;
     color: $color-white;
     padding-bottom: 10px;
   }
-}
-
-.Contact-contacts {
-  &-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  &-socials {
+    padding-top: 20px;
+    .Contact-title {
+      text-align: center;
+      color: $color-blue-marine;
+    }
   }
-}
-
-.Contact-followMe {
-  &-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding-bottom: 10px;
-    justify-content: center;
-  }
-
-  &-icon {
-    width: 63px;
-    margin: 5px;
-    height: 57px;
+  &-form {
+    width: 80%;
+    @include media(tablet) {
+      width: 45%;
+    }
   }
 }

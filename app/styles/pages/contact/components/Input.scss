@@ -1,11 +1,12 @@
 .Input {
+  width: 100%;
   padding-bottom: 15px;
   &-field {
-    padding: 5px;
-    width: 237px;
+    width: 100%;
     height: 38px;
-    border: $boder;
-    background-color: $color-beige;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    background-color: $color-white;
     &::placeholder {
       font-size: 14px;
       color: $color-brown-grey;

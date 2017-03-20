@@ -46,6 +46,12 @@ gulp.task('webpack', () => {
   .pipe($.print(fp => `webpack: ${fp}`))
 })
 
+gulp.task('fonts', () =>
+  gulp.src(PATHS.fonts.src)
+  .pipe(gulp.dest(PATHS.fonts.dest))
+  .pipe($.print(fp => `fonts: ${fp}`))
+)
+
 gulp.task('images', () =>
   gulp.src(PATHS.images.src)
   .pipe(gulp.dest(PATHS.images.dest))
