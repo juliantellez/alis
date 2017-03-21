@@ -12,10 +12,12 @@
   }
 
   &-modal {
-    height: 100vh;
+    width: 100%;
     padding: 15px;
-    background-color: $color-grey-pink;
-
+    height: 100vh;
+    background: url(encodeSvg(svg-background()));
+    background-size: cover;
+    position: relative;
     .Links {
       width: 100%;
       height: 100%;
@@ -25,7 +27,13 @@
       align-items: center;
       flex-direction: column;
       justify-content: center;
-      border: 20px solid $color-grey-light;
+      border: 20px solid $color-light-blue-grey;
+    }
+    &-button {
+      @include cancelIcon($size: 30px, $opacity: 1);
+      position: absolute;
+      right: 15%;
+      top: 13%;
     }
   }
 }

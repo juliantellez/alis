@@ -1,4 +1,4 @@
-.ContactMe {
+.ContactForm {
   &-title {
     @include title();
   }
@@ -7,18 +7,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
   &-message {
     .Input-field {
       height: 100px;
+      resize: vertical;
     }
   }
   &-button {
-    border: $boder;
-    border-radius: 6px;
-    padding: 10px 50px;
     display: flex;
+    padding: 5px 50px;
+    border-radius: 6px;
+    color: $color-white;
     align-items: center;
+    border: 1px solid $color-blue-marine;
+    background-color: $color-blue-marine;
+    transition: background-color .5s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      background-color: $color-blue-marine--dark;
+    }
     &-text {
       padding-right: 5px;
     }

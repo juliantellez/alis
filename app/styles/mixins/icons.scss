@@ -1,5 +1,9 @@
-@mixin closeIcon ($color: $color-white, $size: 15px) {
-  opacity: .5;
+@mixin cancelIcon (
+  $color: $color-white,
+  $size: 15px,
+  $opacity: .5
+  ) {
+  opacity: $opacity;
   cursor: pointer;
   position: relative;
   display: inline-block;

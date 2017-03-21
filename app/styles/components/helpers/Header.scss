@@ -2,6 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  background: url(encodeSvg(svg-headerBackground()));
+  background-size: cover;
+  background-position: 0 95%;
+  padding: 10px;
+  padding-bottom: 70px;
   @include media(tablet) {
     padding-right: 25px;
   }
@@ -9,21 +15,27 @@
     align-items: base-line;
   }
   &-logo {
-    width: 130px;
-    height: 65px;
-    @include media(tablet) {
-      width: 200px;
-      height: 100px;
+    width: 120px;
+    height: 60px;
+    margin-left: 20px;
+    g {
+      stroke-width: 4px;
+    }
+    path:last-child {
+      stroke-width: 6px;
     }
   }
   &-links {
     display: none;
     @include media (desktop) {
       display: flex;
+      margin-right: 30px;
       justify-content: space-between;
     }
-    .Links-link {
-      margin-left: 30px;
+    .Links {
+      &-link {
+        margin-left: 85px;
+      }
     }
   }
   &-modal {

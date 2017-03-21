@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import React from 'react'
 import Formsy from 'formsy-react'
 
@@ -6,9 +7,9 @@ import Spinner from 'scripts/components/helpers/Spinner'
 import mailSenderManager from 'scripts/api/managers/mailSender'
 import Input from './Input'
 
-const cls = elem => `ContactMe-${elem}`
+const cls = elem => `ContactForm-${elem}`
 
-export default class ContactMe extends React.Component {
+export default class ContactForm extends React.Component {
   static contextTypes = {
     env: React.PropTypes.object,
     store: React.PropTypes.object,
@@ -39,17 +40,36 @@ export default class ContactMe extends React.Component {
     )
   }
 
-  _onValidSubmit = data => {
+  _performCheck =  data => {
+    const {dataSent} = this.state
+    const hasBeenSent = _.isEqual(data, dataSent)
+    return !hasBeenSent ? this._sendMessage(data) : this._setNotification('This message has already been sent 😃')
+  }
+
+  _sendMessage = data => {
     this.setState({isSubmitting: true})
-    mailSenderManager.send(data)
+    return mailSenderManager.send(data)
     .then(res => {
-      this.setState({isSubmitting: false})
+      this.setState({
+        isSubmitting: false,
+        hasSubmitted: true,
+        dataSent: data,
+      })
       this._setNotification('Message Sent ✌')
     })
     .catch(e => {
       this.setState({isSubmitting: false})
       this._setNotification(this._errorMessage())
     })
+  }
+
+  _onValidSubmit = data => {
+    const {hasSubmitted} = this.state
+    if (hasSubmitted) {
+      this._performCheck(data)
+    } else {
+      this._sendMessage(data)
+    }
   }
 
   _getButton () {
@@ -76,8 +96,7 @@ export default class ContactMe extends React.Component {
 
   render () {
     return (
-      <div className='ContactMe' >
-        <div className={cls('title')} >Contac Me</div>
+      <div className='ContactForm' >
         <Formsy.Form
           className={cls('form')}
           onValidSubmit={this._onValidSubmit}
@@ -85,7 +104,7 @@ export default class ContactMe extends React.Component {
         >
           <Input
             name='name'
-            placeHolder='Your name'
+            placeHolder='Name'
             validations={{
               isExisty: true,
               isWords: true,
@@ -99,7 +118,7 @@ export default class ContactMe extends React.Component {
               isEmail: true,
               isExisty: true,
             }}
-            placeHolder='Your email'
+            placeHolder='Email Address'
             className={cls('email')}
             validationError='This is not a valid email'
           />
@@ -108,7 +127,7 @@ export default class ContactMe extends React.Component {
             name='message'
             validations='isExisty'
             className={cls('message')}
-            placeHolder='A short message'
+            placeHolder='Message'
             validationError='This field is Empty'
           />
           {this._getButton()}

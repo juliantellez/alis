@@ -5,7 +5,8 @@
   background-color: $color-blue-marine;
   transition: bottom .5s cubic-bezier(.455,.03,.515,.955);
   &-button {
-    @include closeIcon();
+    @include cancelIcon();
+    height: 16px;
   }
   &-wrapper {
     padding: 10px;

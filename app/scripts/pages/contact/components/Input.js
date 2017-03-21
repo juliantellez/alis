@@ -9,7 +9,10 @@ class Input extends React.Component {
     setValue: React.PropTypes.func,
     getValue: React.PropTypes.func,
     textArea: React.PropTypes.bool,
+    showError: React.PropTypes.func,
     placeHolder: React.PropTypes.string,
+    isFormSubmitted: React.PropTypes.func,
+    validationError: React.PropTypes.string,
     name: React.PropTypes.string.isRequired,
   }
 

@@ -16,6 +16,10 @@ const PATHS = {
     src: path.join(SRC, 'styles/main.scss'),
     dest: path.join(STATIC, 'styles'),
   },
+  fonts: {
+    src: path.join(SRC, 'fonts/**/*'),
+    dest: path.join(STATIC, 'fonts'),
+  },
   images: {
     src: path.join(SRC, 'images/**/*'),
     dest: path.join(STATIC, 'images'),

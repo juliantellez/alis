@@ -1,48 +1,32 @@
 .Contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 50px auto;
+  @include media (tablet) {
+    max-width: 600px;
+  }
+  @include media (desktop) {
+    max-width: 1000px; 
+  }
+
   &-title {
-    @include title();
-  }
-}
-
-.Contact-getInTouch {
-  &-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  &-section {
-    display: flex;
-    align-items: center;
-    padding-bottom: 15px;
-    &-icon {
-      width: 30px;
-      height: 30px;
-      @include media (desktop) {
-        width: 50px;
-        height: 50px
-      }
-    }
-    &-text {
-      width: 220px;
-      font-size: 14px;
-      text-align: center;
-    }
-  }
-}
-
-.Contact-followMe {
-  &-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: $color-white;
     padding-bottom: 10px;
-    justify-content: center;
   }
-
-  &-icon {
-    width: 63px;
-    margin: 5px;
-    height: 57px;
+  &-socials {
+    padding-top: 20px;
+    .Contact-title {
+      text-align: center;
+      color: $color-blue-marine;
+    }
+  }
+  &-form {
+    width: 80%;
+    @include media(tablet) {
+      width: 45%;
+    }
   }
 }

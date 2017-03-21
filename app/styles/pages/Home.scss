@@ -2,7 +2,8 @@
   width: 100%;
   height: 100%;
   padding: 15px;
-  background-color: $color-grey-pink;
+  background-color: $color-white;
+
   &-content {
     width: 100%;
     height: 100%;
@@ -12,7 +13,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    border: 20px solid $color-grey-light;
+    border: 20px solid $color-light-blue-grey;
   }
   &-icon {
     width: 190px;
@@ -30,6 +31,12 @@
       max-width: 460px;
       padding-top: 40px;
       padding-bottom: 70px;
+    }
+  }
+  &-modal {
+    transition: transform .3s ease-in;
+    &:hover {
+      transform: rotate(180deg)
     }
   }
   &-button {
