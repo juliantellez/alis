@@ -4,43 +4,42 @@
   flex-direction: column;
   justify-content: center;
   font-weight: lighter;
-  &-section {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+  color: $greyish-brown;
+  padding: 10px 20px;
+  @include media (desktop) {
+    margin: auto;
+    max-width: 1000px;
+    flex-direction: row;
+    justify-content: space-around;
   }
   &-title {
-    @include title();
+    font-size: 20px;
+    font-weight: $bold;
     max-width: 200px;
+    text-align: center;
   }
-  &-ali {
+  &-text {
+    font-size: 14px;
+    padding: 10px 0;
+    @include media (tablet) {
+      font-size: 25px;
+      padding: 15px 0;
+      text-align: center;
+    }
+  }
+  &-img {
     height: 130px;
     width: 130px;
-  }
-  &-essentials {
-    width: 236px;
-    height: 142px;
-  }
-  &-percentage {
-    font-size: 50px;
-    padding-left: 20px;
+    margin-bottom: 10px;
   }
   &-content {
     display: flex;
     font-size: 14px;
     align-items: center;
-    color: $color-grey-warm;
+    flex-direction: column;
     justify-content: space-between;
-    &-wrapper {
-      &-section {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      &-percentage {
-        padding-left: 10px;
-      }
+    @include media (tablet) {
+      max-width: 450px;
     }
   }
 }
