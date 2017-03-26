@@ -13,6 +13,8 @@ export default class SkillsGraph extends React.Component {
     env: React.PropTypes.object,
   }
 
+  state = {}
+
   data = [
     {name: 'UX', uv: 85, pv: 2400, fill: '#8884d8'},
     {name: 'UI', uv: 82, pv: 1398, fill: '#8dd1e1'},
@@ -22,16 +24,13 @@ export default class SkillsGraph extends React.Component {
     {name: 'Prototyping', uv: 74, pv: 4800, fill: '#ffc658'},
   ]
 
-  componentwillMount () {
-    if (!this.context.env.isBrowser()) {
-      return null
+  componentDidMount () {
+    if (this.context.env.isBrowser()) {
+      this.setState({canRender: true})
     }
   }
 
   _getChart () {
-    if (!this.context.env.isBrowser()) {
-      return null
-    }
     return (
       <RadialBarChart
         cx={150}
@@ -63,6 +62,9 @@ export default class SkillsGraph extends React.Component {
   }
 
   render () {
+    if (!this.state.canRender) {
+      return null
+    }
     return (
       <div className='SkillsGraph'>
         <div className={cls('title')}>My Skills</div>

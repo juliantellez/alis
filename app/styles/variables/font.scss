@@ -1,23 +1,23 @@
 @font-face {
   font-family: 'fontBase';
-  src: url('/static/font/light.woff2') format('woff2');
+  src: url('/static/fonts/light.woff2') format('woff2');
   font-weight: lighter;
   font-style: normal;
 }
 @font-face {
   font-family: 'fontBase';
-  src: url('/static/font/regular.woff2') format('woff2');
+  src: url('/static/fonts/regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'fontBase';
-  src: url('/static/font/bold.woff2') format('woff2');
+  src: url('/static/fonts/bold.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
 }
 
-$fontFamily-base: 'fontBase', 'Open Sans', sans-serif !important;
+$fontFamily-base: 'fontBase', 'Open Sans', sans-serif;
 $fontFamily-serif: "source-serif-pro", "Times New Roman", Times, serif;
 $fontFamily-mono: "source-code-pro", Monaco, Menlo, Consolas, "Courier New", monospace;
 

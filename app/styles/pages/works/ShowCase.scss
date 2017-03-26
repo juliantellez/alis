@@ -1,0 +1,24 @@
+.ShowCase {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  &-work {
+    margin: 10px;
+  }
+  &-wrapper {
+    width: 200px;
+    height: 160px;
+    overflow-x: scroll;
+    @include media(tablet) {
+      width: 330px;
+      height: 260px;
+    }
+    &--back {
+      padding:10px;
+    }
+  }
+  &-img {
+    width: 100%;
+    height: 100%;
+  }
+}

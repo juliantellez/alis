@@ -3,6 +3,7 @@ import path from 'path'
 
 import config from 'scripts/config'
 import nodeMailer from 'server/services/nodemailer'
+import failAction from 'scripts/routes/utils/failAction'
 
 export default {
   method: 'POST',
@@ -44,12 +45,7 @@ export default {
         message: Joi.string().required(),
         name: Joi.string().required(),
       }).required(),
-      failAction: (request: Function, reply: Function, payload: string, error: Object) => {
-        console.log('PATH:', request.path + '\n')
-        console.log('ERROR:', JSON.stringify(error.output) + '\n')
-        console.log('PAYLOAD:', JSON.stringify(request.payload) + '\n')
-        return reply(error)
-      },
+      failAction: failAction,
     },
   },
 }
