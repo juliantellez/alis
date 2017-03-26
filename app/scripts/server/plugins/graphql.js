@@ -1,9 +1,11 @@
-// @flow
 import { apolloHapi } from 'apollo-server'
 import { makeExecutableSchema } from 'graphql-tools'
+
+import data from 'server/graphql/data'
 import squema from 'server/graphql/models/work/workSchema'
 import resolver from 'server/graphql/models/work/workQuery'
-import data from 'server/graphql/data'
+
+import config from 'scripts/config'
 
 const executableSchema = makeExecutableSchema({
   typeDefs: [squema],
@@ -13,7 +15,7 @@ const executableSchema = makeExecutableSchema({
 export default {
   register: apolloHapi,
   options: {
-    path: '/graphql',
+    path: config.apiEndpoints.graphql,
     apolloOptions: () => ({
       pretty: true,
       schema: executableSchema,

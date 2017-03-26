@@ -1,11 +1,12 @@
 import {graphiqlHapi} from 'apollo-server'
+import config from 'scripts/config'
 
 export default {
   register: graphiqlHapi,
   options: {
-    path: '/graphiql',
+    path: config.apiEndpoints.graphiql,
     graphiqlOptions: {
-      endpointURL: '/graphql',
+      endpointURL: config.apiEndpoints.graphql,
     },
   },
 }

@@ -1,36 +1,32 @@
 import Joi from 'joi'
-import path from 'path'
+import React from 'react'
+import ReactDOMServer from 'react-dom/server'
 
 import config from 'scripts/config'
 import nodeMailer from 'server/services/nodemailer'
 import failAction from 'scripts/routes/utils/failAction'
 
+import ContacEmail from 'scripts/components/emails/Contact'
+
 export default {
   method: 'POST',
-  path: path.normalize(path.join(config.get('BASE_URL'), '/api', 'send-mail')),
+  path: config.apiEndpoints.sendMail,
   handler: (request: Function, reply: Function) => {
     const {email, message, name} = request.payload
+    const {service, user, pass} = config.mailCredentials
 
-    const FROM = '"👻ALIWAY.CO👻" <contact-me@aliway.com>'
-    const TO = 'jgubina@gmail.com'
+    const TO = user
+    const FROM = '"👻ALIWAY.CO👻" <info@aliway.com>'
     const SUBJECT = `${name} wants to conatct you :)`
-    const HTML = (`
-      <h1><strong>Hello Ali!</strong></h1>
-      <div>You have a message from <strong>${name}</strong></div>
-      <br/>
-      <h4>Contact:</h4>
-      <div>${email}</div>
-      <br/>
-      <h4>MESSAGE:</h4>
-      <div>"${message} ..."</div>
-    `)
 
+    const HTML = ReactDOMServer.renderToStaticMarkup(
+      <ContacEmail
+        name={name}
+        email={email}
+        message={message}
+      />
+    )
     const mail = nodeMailer.createEmail(FROM, TO, SUBJECT, HTML)
-
-    const service = 'Gmail'
-    const user = 'jgubina@gmail.com'
-    const pass = 'gubina22'
-
     const transport = nodeMailer.createTransport(service, user, pass)
 
     nodeMailer.sendMail(transport, mail)
