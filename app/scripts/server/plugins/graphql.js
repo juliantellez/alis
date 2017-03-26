@@ -1,20 +1,13 @@
 // @flow
 import { apolloHapi } from 'apollo-server'
 import { makeExecutableSchema } from 'graphql-tools'
-import squema from 'server/squema'
-// import resolvers from 'server'
-
-const resolvers = {
-  Query: {
-    getWorkByName (root, {name}) {
-      return {name}
-    },
-  },
-}
+import squema from 'server/graphql/models/work/workSchema'
+import resolver from 'server/graphql/models/work/workQuery'
+import data from 'server/graphql/data'
 
 const executableSchema = makeExecutableSchema({
   typeDefs: [squema],
-  resolvers: resolvers,
+  resolvers: resolver(data),
 })
 
 export default {
