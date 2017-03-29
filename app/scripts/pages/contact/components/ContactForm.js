@@ -40,7 +40,7 @@ export default class ContactForm extends React.Component {
     )
   }
 
-  _performCheck =  data => {
+  _performCheck = data => {
     const {dataSent} = this.state
     const hasBeenSent = _.isEqual(data, dataSent)
     return !hasBeenSent ? this._sendMessage(data) : this._setNotification('This message has already been sent 😃')

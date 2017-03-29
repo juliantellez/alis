@@ -1,8 +1,8 @@
-import ContactMe from 'scripts/pages/contact/components/ContactMe'
+import ContactForm from 'scripts/pages/contact/components/ContactForm'
 
-describe('<ContactMe />', () => {
+describe('<ContactForm />', () => {
   it('renders', () => {
-    const wrapper = mount(<ContactMe />)
+    const wrapper = mount(<ContactForm />)
     expect(wrapper.find('ContactMe').length).to.equal(1)
   })
 })

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import env from 'scripts/utils/env'
-import store from 'scripts/store/main'
+import store from 'scripts/client/store/main'
 
 import Notifications from 'scripts/components/helpers/Notifications'
 

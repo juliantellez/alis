@@ -6,7 +6,7 @@ import config from 'scripts/config'
 import nodeMailer from 'server/services/nodemailer'
 import failAction from 'scripts/routes/utils/failAction'
 
-import ContacEmail from 'scripts/components/emails/Contact'
+import ContacEmail from 'scripts/components/email/Contact'
 
 export default {
   method: 'POST',

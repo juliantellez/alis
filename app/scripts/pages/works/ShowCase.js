@@ -11,11 +11,11 @@ export default class ShowCase extends React.Component {
     works: React.PropTypes.array.isRequired,
   }
 
-  _getWork = ({src, href, description}) => {
+  _getWork = ({image, url, description}) => {
     const front = (
-      <Link className={cls('link')} to={href}>
+      <Link className={cls('link')} to={url}>
         <div className={cls('wrapper')}>
-          <img className={cls('img')} src={src} />
+          <img className={cls('img')} src={image} />
         </div>
       </Link>
     )
@@ -30,7 +30,7 @@ export default class ShowCase extends React.Component {
         back={back}
         front={front}
         className={cls('work')}
-        key={src.concat(Math.random())}
+        key={Math.random()}
       />
     )
   }

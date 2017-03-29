@@ -1,7 +1,7 @@
 import React from 'react'
 import {Route, IndexRoute} from 'react-router'
 
-import store from 'scripts/store/main'
+import store from 'scripts/client/store/main'
 import env from 'scripts/utils/env'
 
 import Home from 'scripts/pages/Home'
