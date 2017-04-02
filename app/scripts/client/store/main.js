@@ -1,16 +1,29 @@
-import { createStore } from 'redux'
-
+import {applyMiddleware, createStore} from 'redux'
+import env from 'scripts/utils/env'
 import reducers from 'scripts/client/reducers/main'
-import actions from 'scripts/client/actions/main'
-import createActionPromise from 'scripts/client/utils/createActionPromise'
 
-const STATE = {} // TODO load from server
+let STATE = {}
+if (env.isBrowser()) {
+  STATE = window.STATE || {}
+}
 
-const store = createStore(
-  reducers,
-  STATE,
-)
+import _ from 'lodash'
 
-export const Actions = createActionPromise(actions, store)
+function thunkMiddleware (store) {
+  return dispatch => {
+    return action => {
+      if (_.isFunction(action)) {
+        return action(store)
+      } else {
+        return dispatch(action)
+      }
+    }
+  }
+}
+
+const createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore)
+const store = createStoreWithMiddleware(reducers, STATE)
+store.env = env.isBrowser() ? 'browser' : 'server'
+store.id = Math.random()
 
 export default store

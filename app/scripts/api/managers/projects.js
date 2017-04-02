@@ -1,4 +1,7 @@
+import I from 'immutable'
 import graphql from 'scripts/api/graphql'
+
+import projectHelper from '../helpers/project'
 
 export default {
   getProjects (amount) {
@@ -12,5 +15,6 @@ export default {
       }
     `
     return graphql.query({query})
+    .then(res => res.get('data').get('getWorks').map(projectHelper.getFromData))
   },
 }

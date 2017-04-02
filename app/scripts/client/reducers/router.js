@@ -1,20 +1,22 @@
-import _ from 'lodash'
-import { SET_ROUTE } from 'scripts/client/actions/router'
+import Route from 'scripts/api/definitions/Route'
+import {SET_ROUTE} from 'scripts/client/actions/router'
 
-const setRoute = (prevState = {}, nextState = {}) => {
-  const {location, params} = nextState
-  const router = {
-    params,
-    location,
-  }
-  return _.merge(prevState, router)
+const onSetRoute = ({route}) => {
+  const {path, params, query} = route
+  const currentPath = path || location.pathname
+  const currentQuery = query || location.query
+  return new Route({
+    path: currentPath,
+    query: Route.setParams(currentQuery),
+    params: Route.setQuery(params),
+  })
 }
 
 const router = (state = {}, action) => {
-  const types = {
-    [SET_ROUTE]: setRoute(state, action.state),
+  switch (action.type) {
+    case SET_ROUTE: return onSetRoute(action)
+    default: return new Route()
   }
-  return types[action.type] || state
 }
 
 export default router

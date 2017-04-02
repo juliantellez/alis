@@ -3,7 +3,7 @@ import projects from './projects'
 import notification from './notification'
 
 export default {
-  ...router,
-  ...projects,
-  ...notification,
+  router,
+  projects,
+  notification,
 }

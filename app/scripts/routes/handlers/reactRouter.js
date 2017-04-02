@@ -1,18 +1,19 @@
 import path from 'path'
-
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { match, RouterContext } from 'react-router'
 
-import env from 'scripts/utils/env'
 import config from 'scripts/config'
-import store from 'scripts/store/main'
+import env from 'scripts/utils/env'
+
 import routes from 'scripts/routes/main'
+import store from 'scripts/client/store/main'
+import actions from 'scripts/client/actions/main'
 
 import Html from 'scripts/components/markup/Html'
 
 const createElement = (component, routeProps) => {
-  return React.createElement(component, {...routeProps, store, env})
+  return React.createElement(component, {...routeProps, store, env, actions})
 }
 
 export default {
@@ -20,8 +21,8 @@ export default {
   path: path.normalize(path.join(config.get('BASE_URL'), '/{path*}')),
   handler: (request: Function, reply: Function) => {
     const location = request.url
-    Promise.resolve([
-      store.dispatch({type: 'SET_ROUTE', state: request}),
+    Promise.all([
+      store.dispatch(actions.router.setRoute(request)),
     ])
     .then(
       match({routes, location}, (e, redirectLocation, props) => {
@@ -30,7 +31,7 @@ export default {
         )
 
         const html = (
-          <Html title='ALI WAY'>
+          <Html title='ALI WAY' store={store}>
             {content}
           </Html>
         )

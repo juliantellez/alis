@@ -1,5 +1,7 @@
 import {api} from 'scripts/api/request'
 
+import mailHelper from '../helpers/mail'
+
 export default {
   send ({email, message, name}) {
     return api('send-mail', {
@@ -7,5 +9,6 @@ export default {
       message,
       name,
     })
+    .then(data => mailHelper.getFromData(data))
   },
 }

@@ -2,7 +2,6 @@ import _ from 'lodash'
 import React from 'react'
 
 import Loader from 'scripts/components/helpers/Loader'
-import {Actions} from 'scripts/client/store/main'
 
 import ShowCase from './works/ShowCase'
 
@@ -12,6 +11,7 @@ export default class Works extends React.Component {
   static contextTypes = {
     env: React.PropTypes.object,
     store: React.PropTypes.object,
+    actions: React.PropTypes.object,
   }
 
   state = {}
@@ -19,19 +19,15 @@ export default class Works extends React.Component {
   _updateState = () => {
     const {store} = this.context
     const {projects} = store.getState()
-    if (!_.isNil(projects.data)) {
-      this.setState({
-        works: projects.data.getWorks,
-      })
-    }
+    this.setState({projects})
   }
 
   componentWillMount () {
-    const {env, store} = this.context
+    const {env, store, actions} = this.context
     if (!env.isBrowser()) {
       return
     }
-    Actions.getProjects(6)
+    store.dispatch(actions.projects.GET_PROJECTS(6))
     this.unsubscribe = store.subscribe(this._updateState)
   }
 
@@ -40,19 +36,19 @@ export default class Works extends React.Component {
   }
 
   _canRender () {
-    const {works} = this.state
+    const {projects} = this.state
     return (
-      !_.isNil(works)
+      !_.isNil(projects)
     )
   }
   render () {
-    const {works} = this.state
+    const {projects} = this.state
     if (!this._canRender()) {
       return <Loader />
     }
     return (
       <div className='Works'>
-        <ShowCase works={works} />
+        <ShowCase works={projects} />
       </div>
     )
   }
