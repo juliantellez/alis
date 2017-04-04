@@ -30,7 +30,7 @@ export default {
     `
     return graphql.query({query})
     .then(res => {
-      const project = res.get('data').get('getProjectBySlug')
+      const project = res.get('data').get('getBySlug')
       return projectHelper.getFromData(project)
     })
   },

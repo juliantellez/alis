@@ -1,4 +1,3 @@
-import _ from 'lodash'
 import React from 'react'
 
 export default class Project extends React.Component {
@@ -11,8 +10,6 @@ export default class Project extends React.Component {
   state = {}
 
   _updateState = () => {
-    const {store} = this.context
-    console.log(store.getState())
   }
 
   componentWillMount () {

@@ -1,7 +1,6 @@
 const resolver = data => ({
   Query: {
     getProjects (root, {count = 0}) {
-      console.log('here')
       return data.slice(0, count).toJS()
     },
     getBySlug (args, {slug = ''}) {
