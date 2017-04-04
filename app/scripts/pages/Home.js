@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Logo from 'scripts/components/icons/LogoShort'
-import Footer from 'scripts/components/helpers/Footer'
 import Modal from 'scripts/components/header/LinksModal'
 
 const cls = elm => `Home-${elm}`
@@ -20,7 +19,6 @@ export default class Home extends React.Component {
             web and graphic designer.
           </div>
           <Modal className={cls('modal')} />
-          <Footer />
         </div>
       </div>
     )

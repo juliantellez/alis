@@ -5,8 +5,6 @@ import Loader from 'scripts/components/helpers/Loader'
 
 import ShowCase from './works/ShowCase'
 
-const cls = elem => `Works-${elem}`
-
 export default class Works extends React.Component {
   static contextTypes = {
     env: React.PropTypes.object,
@@ -19,16 +17,20 @@ export default class Works extends React.Component {
   _updateState = () => {
     const {store} = this.context
     const {projects} = store.getState()
-    this.setState({projects})
+    this.setState({projects: projects.all})
   }
 
   componentWillMount () {
-    const {env, store, actions} = this.context
-    if (!env.isBrowser()) {
-      return
+    const {store, actions} = this.context
+    const {projects} = store.getState()
+    if (projects.get('all').isEmpty()) {
+      store.dispatch(actions.projects.GET_PROJECTS(6))
     }
-    store.dispatch(actions.projects.GET_PROJECTS(6))
     this.unsubscribe = store.subscribe(this._updateState)
+  }
+
+  componentDidMount () {
+    this._updateState()
   }
 
   componentWillUnmount () {
@@ -38,7 +40,8 @@ export default class Works extends React.Component {
   _canRender () {
     const {projects} = this.state
     return (
-      !_.isNil(projects)
+      !_.isNil(projects) ||
+      !_.isEmpty(projects)
     )
   }
 
