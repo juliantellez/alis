@@ -6,7 +6,8 @@ Run locally:
 
 ```
 nvm use
-npm i && npm start
+npm i && npm build
+npm start
 
 ```
 This is an experimental project which aims to explore Isomorphic implementations such as: 
