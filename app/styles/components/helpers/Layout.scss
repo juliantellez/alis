@@ -1,6 +1,9 @@
 .Layout {
   width: 100%;
   min-height: 100%;
+  display: flex;
+  flex-direction: column;
   background: url(encodeSvg(svg-background()));
   background-size: cover;
+  position: relative;
 }

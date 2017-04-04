@@ -4,8 +4,10 @@ import React from 'react'
 export default class Html extends React.Component {
   static propTypes = {
     title: React.PropTypes.string,
+    store: React.PropTypes.object,
   }
   render () {
+    const state = JSON.stringify(this.props.store.getState())
     return (
       <html>
         <head>
@@ -17,6 +19,7 @@ export default class Html extends React.Component {
         <body>
           <div id='main' dangerouslySetInnerHTML={{__html: this.props.children}} />
           <script src='/static/bundles/client.js'></script>
+          <script dangerouslySetInnerHTML={{__html: `window.STATE = ${state}`}}/>
         </body>
       </html>
     )

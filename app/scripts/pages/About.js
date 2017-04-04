@@ -1,5 +1,7 @@
 import React from 'react'
 
+import SkillsGraph from './about/SkillsGraph'
+
 const cls = elm => `About-${elm}`
 
 export default class About extends React.Component {
@@ -15,31 +17,22 @@ export default class About extends React.Component {
   render () {
     return (
       <div className='About'>
-        <div className={cls('section aboutMe')}>
+        <div className={cls('content')}>
+          <img className={cls('img')} src='/static/images/pages/ali.png'/>
           <div className={cls('title')}>All you need to know about me</div>
-          <div className={cls('content')}>
-            <img className={cls('ali')} src='/static/images/pages/ali.png'/>
+          <div className={cls('text')}>
+            I’m an UK based designer,
+            im passioned about UI / UX Design, Graphic Design,
+            Branding, Logo Design, Vector Graphics and Sketch.
+            I’m also a painter and consider myself a very creativ person.
           </div>
-        </div>
-
-        <div className={cls('section lifeEssentials')}>
-          <div className={cls('title')}>Life essentials</div>
-          <div className={cls('content')}>
-            <img className={cls('essentials')} src='/static/images/pages/essentialsMobile.png'/>
-          </div>
-        </div>
-
-        <div className={cls('section canBeFound')}>
           <div className={cls('title')}>Can be found</div>
-          <div className={cls('content')}>
-            <div className={cls('content-wrapper')}>
-              {this._getCanBeFound('• Working on projects', '50')}
-              {this._getCanBeFound('• Finding design inspiration', '20')}
-              {this._getCanBeFound('• Sleping', '30')}
-            </div>
-            <div className={cls('percentage')}>%</div>
+          <div className={cls('text')}>
+            Sketching new projects, bringin new ideas to life,
+            creating simple, beautiful and modern designs.
           </div>
         </div>
+        <SkillsGraph />
       </div>
     )
   }

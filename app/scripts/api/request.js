@@ -4,7 +4,7 @@ import request from 'superagent'
 import {baseUrl} from 'scripts/utils/env'
 
 const post = (url, manager, method, data = {}) => {
-  let path = `${url}/${manager}/${method}/`
+  let path = `${url}/${manager}/${method}`
   return new Promise((resolve, reject) => {
     request
     .post(path)

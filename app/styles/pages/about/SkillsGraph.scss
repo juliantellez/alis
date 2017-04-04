@@ -1,0 +1,26 @@
+.SkillsGraph {
+  &-chart {
+    width: 300px !important;
+    height: 300px !important;
+  }
+  &-title {
+    font-size: 20px;
+    max-width: 200px;
+    font-weight: $bold;
+    text-align: center;
+    margin: 0 auto;
+    @include media (tablet) {
+      margin: 10px auto 0;
+    }
+  }
+  &-legend {
+    width: 150px;
+    height: 240px;
+  }
+  .recharts-legend-wrapper {
+    top: initial !important;
+    bottom: 0 !important;
+    left: 13px !important;
+    line-height: 24px !important;
+  }
+}

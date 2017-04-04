@@ -9,6 +9,7 @@ export default class Notification extends React.Component {
   static contextTypes = {
     env: React.PropTypes.object,
     store: React.PropTypes.object,
+    actions: React.PropTypes.object,
   }
 
   state = {}
@@ -31,8 +32,8 @@ export default class Notification extends React.Component {
   }
 
   _onClick = () => {
-    const {store} = this.context
-    store.dispatch({type: 'REMOVE_NOTIFICATION'})
+    const {store, actions} = this.context
+    store.dispatch(actions.notification.removeNotification())
   }
 
   _canRender () {

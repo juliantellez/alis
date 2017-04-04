@@ -7,6 +7,7 @@
       "app": "./app",
       "scripts": "./app/scripts",
       "server": "./app/scripts/server",
+      "routes": "./app/scripts/routes",
       "test": "./app/test"
       }
     }]

@@ -1,8 +1,8 @@
 import _ from 'lodash'
 import React from 'react'
 import Formsy from 'formsy-react'
-
 import {Link} from 'react-router'
+
 import Spinner from 'scripts/components/helpers/Spinner'
 import mailSenderManager from 'scripts/api/managers/mailSender'
 import Input from './Input'
@@ -13,16 +13,14 @@ export default class ContactForm extends React.Component {
   static contextTypes = {
     env: React.PropTypes.object,
     store: React.PropTypes.object,
+    actions: React.PropTypes.object,
   }
 
   state = {}
 
   _setNotification = content => {
-    const {store} = this.context
-    store.dispatch({
-      type: 'SET_NOTIFICATION',
-      state: {content},
-    })
+    const {store, actions} = this.context
+    store.dispatch(actions.notification.setNotification(content))
   }
 
   _errorMessage () {
@@ -40,10 +38,14 @@ export default class ContactForm extends React.Component {
     )
   }
 
-  _performCheck =  data => {
+  _performCheck = data => {
     const {dataSent} = this.state
     const hasBeenSent = _.isEqual(data, dataSent)
-    return !hasBeenSent ? this._sendMessage(data) : this._setNotification('This message has already been sent 😃')
+    if (!hasBeenSent) {
+      this._sendMessage(data)
+    } else {
+      this._setNotification('This message has already been sent 😃')
+    }
   }
 
   _sendMessage = data => {

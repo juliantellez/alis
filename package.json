@@ -71,6 +71,8 @@
     "react-dom": "^15.4.1",
     "react-linkify": "^0.1.3",
     "react-router": "^2.8.1",
+    "recharts": "^0.21.2",
+    "redux-thunk": "^2.2.0",
     "require-dir": "^0.3.1",
     "sass-loader": "^4.1.1",
     "sinon": "^1.17.6",
@@ -82,11 +84,14 @@
     "webpack-stream": "^3.2.0"
   },
   "dependencies": {
+    "apollo-server": "^0.3.3",
     "boom": "^4.2.0",
     "forever": "^0.15.3",
     "good": "^7.1.0",
     "good-console": "^6.2.0",
     "good-squeeze": "^5.0.1",
+    "graphql": "^0.9.1",
+    "graphql-tools": "^0.10.1",
     "gulp-awspublish": "^3.3.0",
     "gulp-awspublish-router": "^0.1.2",
     "gulp-rev": "^7.1.2",
