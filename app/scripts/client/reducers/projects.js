@@ -3,7 +3,6 @@ const onGetProjectsSuccess = (state, action) => {
 }
 
 const onGetProjectByIdSuccess = (state, action) => {
-  console.log(state, action.data)
   return action.data
 }
 

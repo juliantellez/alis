@@ -2,7 +2,7 @@ import request from 'superagent'
 
 const PATH = 'http://localhost:8000/api/send-mail'
 
-describe('mailsender', () => {
+describe.skip('mailsender', () => {
   it('status ok', done => {
     request
     .post(PATH)
