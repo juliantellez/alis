@@ -1,9 +1,9 @@
 import Hapi from 'hapi'
 
-import options from './options'
-import plugins from './plugins/main'
+import options from 'server/options'
+import plugins from 'server/plugins/main'
 
-import routeHandler from 'scripts/routes/handlers/main'
+import routeHandler from 'routes/handlers/main'
 import config from 'scripts/config'
 
 const server = new Hapi.Server(options)

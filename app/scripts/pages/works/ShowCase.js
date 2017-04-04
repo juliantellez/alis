@@ -8,20 +8,21 @@ const cls = elm => `ShowCase-${elm}`
 
 export default class ShowCase extends React.Component {
   static propTypes = {
-    works: React.PropTypes.array.isRequired,
+    projects: React.PropTypes.object.isRequired,
   }
 
-  _getWork = ({image, url, description}) => {
+  _getWork = ({imageUrl, slug, description, name}) => {
     const front = (
-      <Link className={cls('link')} to={url}>
+      <Link className={cls('link')} to={`projects/${slug}`}>
         <div className={cls('wrapper')}>
-          <img className={cls('img')} src={image} />
+          <img className={cls('img')} src={imageUrl} />
         </div>
       </Link>
     )
     const back = (
       <div className={classnames(cls('wrapper'), cls('wrapper--back'))}>
-        {description}
+        <div className={cls('title')}>{name}</div>
+        <div className={cls('content')}>{description}</div>
       </div>
     )
 
@@ -42,7 +43,7 @@ export default class ShowCase extends React.Component {
   )
 
   render () {
-    const works = this.props.works.map(this._getWork)
+    const works = this.props.projects.map(this._getWork)
     return this._getContent(works)
   }
 }

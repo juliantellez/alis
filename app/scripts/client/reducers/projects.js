@@ -1,24 +1,24 @@
-import _ from 'lodash'
-
-const onFetch = (state, action) => {
-  return action
+const onGetProjectsSuccess = (state, action) => {
+  return action.data
 }
 
-const onSuccess = (state, action) => {
-  console.log(action)
+const onGetProjectByIdSuccess = (state, action) => {
+  console.log(state, action.data)
   return action.data
 }
 
 const onError = (state, action) => {
-  return action
+  return new Error(action.error)
 }
 
 const projects = (state = {}, action) => {
   switch (action.type) {
-    case 'GET_PROJECTS':
-      console.log('dispatchssdfsd')
-      return {}
-    case 'GET_PROJECTS_SUCCESS': return onSuccess(state, action)
+    case 'GET_PROJECTS': return {}
+    case 'GET_PROJECTS_SUCCESS': return onGetProjectsSuccess(state, action)
+    case 'GET_PROJECTS_ERROR': return onError(state, action)
+    case 'GET_PROJECT_BY_SLUG': return {}
+    case 'GET_PROJECT_BY_SLUG_SUCCESS': return onGetProjectByIdSuccess(state, action)
+    case 'GET_PROJECT_BY_SLUG_ERROR': return onError(state, action)
     default: return {}
   }
 }

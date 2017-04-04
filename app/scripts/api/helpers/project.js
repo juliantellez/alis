@@ -4,7 +4,7 @@ export default {
   getFromData (data) {
     return new Project({
       name: data.get('name'),
-      url: data.get('url'),
+      slug: data.get('slug'),
       imageUrl: data.get('imageUrl'),
       description: data.get('description'),
     })

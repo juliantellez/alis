@@ -6,7 +6,6 @@ export default actions => {
     if (_.isFunction(action)) {
       Actions[name] = (...args) => {
         return ({dispatch}) => {
-          console.log('here')
           dispatch({type: name})
           return Promise.resolve(action.apply(null, args))
           .then(data => {

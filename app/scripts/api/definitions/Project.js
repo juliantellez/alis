@@ -2,7 +2,7 @@ import I from 'immutable'
 
 export default class Project extends I.Record({
   name: '',
-  url: '',
+  slug: '',
   imageUrl: '',
   description: '',
 }) {}

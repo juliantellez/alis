@@ -41,6 +41,7 @@ export default class Works extends React.Component {
       !_.isNil(projects)
     )
   }
+
   render () {
     const {projects} = this.state
     if (!this._canRender()) {
@@ -48,7 +49,7 @@ export default class Works extends React.Component {
     }
     return (
       <div className='Works'>
-        <ShowCase works={projects} />
+        <ShowCase projects={projects} />
       </div>
     )
   }

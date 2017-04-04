@@ -1,34 +1,28 @@
 import _ from 'lodash'
 import React from 'react'
 
-import {Actions} from 'scripts/client/store/main'
-
 export default class Project extends React.Component {
   static contextTypes = {
     env: React.PropTypes.object,
     store: React.PropTypes.object,
+    actions: React.PropTypes.object,
   }
 
   state = {}
 
   _updateState = () => {
     const {store} = this.context
-    const {projects} = store.getState()
-    if (!_.isNil(projects.data)) {
-      this.setState({
-        works: projects.data.getWorks,
-      })
-    }
+    console.log(store.getState())
   }
 
   componentWillMount () {
-    const {env, store} = this.context
+    const {env, store, actions} = this.context
     if (!env.isBrowser()) {
       return
     }
     const {router} = store.getState()
-    console.log(store.getState())
-    Actions.getProjects(6)
+    const projectSlug = router.get('params').get('project')
+    store.dispatch(actions.projects.GET_PROJECT_BY_SLUG(projectSlug))
     this.unsubscribe = store.subscribe(this._updateState)
   }
 
