@@ -15,23 +15,10 @@ export default {
       }
     `
     return graphql.query({query})
-    .then(res => res.get('data').get('getProjects').map(projectHelper.getFromData))
-  },
-  getProjectBySlug (slug) {
-    const query = `
-      query {
-        getBySlug(slug: "${slug}"){
-          name,
-          slug,
-          imageUrl,
-          description,
-        }
-      }
-    `
-    return graphql.query({query})
-    .then(res => {
-      const project = res.get('data').get('getBySlug')
-      return projectHelper.getFromData(project)
-    })
+    .then(res =>
+      res.get('data')
+      .get('getProjects')
+      .map(projectHelper.getFromData)
+    )
   },
 }

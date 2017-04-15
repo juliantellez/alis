@@ -1,0 +1,10 @@
+.Palette {
+  display: inline-flex;
+  &-colour {
+    width: 100%;
+    height: 15px;
+    @include media(desktop) {
+      width: 20px;
+    }
+  }
+}

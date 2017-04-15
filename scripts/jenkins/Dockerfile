@@ -1,4 +1,4 @@
-FROM node:6.8.0
+FROM node:__NODE_VERSION__
 
 # Dependencies
 RUN apt-get update && \
