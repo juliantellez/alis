@@ -28,6 +28,7 @@
     @include media(desktop) {
       padding: 0;
       margin-left: 60px;
+      max-width: 640px;
     }
   }
   &-title {

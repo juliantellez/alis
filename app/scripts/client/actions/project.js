@@ -1,4 +1,4 @@
-import projectManager from 'scripts/api/managers/projects'
+import projectManager from 'scripts/api/managers/project'
 import createActionPromise from 'scripts/client/utils/createActionPromise'
 
 const projects = {
