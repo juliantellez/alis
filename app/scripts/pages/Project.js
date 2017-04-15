@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import React from 'react'
-import {Link} from 'react-router'
+import {withRouter, Link} from 'react-router'
 
 import Loader from 'scripts/components/helpers/Loader'
 import Palette from 'scripts/components/helpers/Palette'
@@ -8,7 +8,11 @@ import Drop from 'scripts/components/icons/Drop'
 
 const cls = elem => `Project-${elem}`
 
-export default class Project extends React.Component {
+class Project extends React.Component {
+  static propTypes = {
+    params: React.PropTypes.object,
+  }
+
   static contextTypes = {
     env: React.PropTypes.object,
     store: React.PropTypes.object,
@@ -19,20 +23,31 @@ export default class Project extends React.Component {
 
   _updateState = () => {
     const {project} = this.context.store.getState()
-    console.log('here!!')
     this.setState({project})
   }
 
   componentWillMount () {
-    const {env, store, actions} = this.context
+    const {env, store} = this.context
     if (!env.isBrowser()) {
       return
     }
     const {router} = store.getState()
     const projectSlug = router.get('params').get('project')
-    store.dispatch(actions.project.GET_PROJECT_BY_SLUG(projectSlug))
-    store.dispatch(actions.project.GET_RELATED_PROJECTS(projectSlug))
+    this.fetchProject(projectSlug)
     this.unsubscribe = store.subscribe(this._updateState)
+  }
+
+  fetchProject (slug) {
+    const {store, actions} = this.context
+    store.dispatch(actions.project.GET_PROJECT_BY_SLUG(slug))
+    store.dispatch(actions.project.GET_RELATED_PROJECTS(slug))
+  }
+
+  componentWillReceiveProps (nextProps) {
+    const {project} = nextProps.params
+    if (project !== this.props.params.project) {
+      this.fetchProject(project)
+    }
   }
 
   componentWillUnmount () {
@@ -45,11 +60,11 @@ export default class Project extends React.Component {
       const href = `/projects/${project.get('slug')}`
       const src = project.get('imageUrl')
       return (
-        <a className={cls('link')} href={href} key={i} target='_blank'>
+        <Link className={cls('link')} to={href} key={i} >
           <div className={cls('more-img-wrapper')}>
             <img className={cls('more-img')} src={src} />
           </div>
-        </a>
+        </Link>
       )
     })
   }
@@ -67,7 +82,6 @@ export default class Project extends React.Component {
     if (!this._canRender()) {
       return <Loader />
     }
-    console.log(this.context.store.getState().router.toJS())
     return (
       <div className='Project'>
         <div className={cls('img-wrapper')}>
@@ -97,3 +111,5 @@ export default class Project extends React.Component {
     )
   }
 }
+
+export default withRouter(Project)
