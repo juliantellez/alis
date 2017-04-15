@@ -3,7 +3,7 @@ import classnames from 'classnames'
 
 import {Link} from 'react-router'
 
-import FlipCard from './FlipCard'
+import FlipCard from 'scripts/components/helpers/FlipCard'
 const cls = elm => `ShowCase-${elm}`
 
 export default class ShowCase extends React.Component {

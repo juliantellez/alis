@@ -28,7 +28,7 @@
     @include media(desktop) {
       padding: 0;
       margin-left: 60px;
-      max-width: 640px;
+      max-width: 645px;
     }
   }
   &-title {
@@ -70,14 +70,20 @@
         margin: 0 auto 10px;
         @include media(tablet) {
           margin: 0 10px 10px 0;
+          max-width: 168px;
         }
+      }
+    }
+    &-projects {
+      @include media(tablet) {
+        display: flex;
+        flex-wrap: wrap;
+        width: 420px;
       }
     }
     &-content {
       @include media(tablet) {
         display: flex;
-        align-items: center;
-        justify-content: center;
       }
     }
   }

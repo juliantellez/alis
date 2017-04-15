@@ -6,6 +6,8 @@ import Loader from 'scripts/components/helpers/Loader'
 import Palette from 'scripts/components/helpers/Palette'
 import Drop from 'scripts/components/icons/Drop'
 
+import GetInTouch from './project/GetInTouch'
+
 const cls = elem => `Project-${elem}`
 
 class Project extends React.Component {
@@ -56,7 +58,7 @@ class Project extends React.Component {
 
   _getMoreProjects () {
     const {project: {related}} = this.state
-    return related.map((project, i) => {
+    return related.slice(0, 6).map((project, i) => {
       const href = `/projects/${project.get('slug')}`
       const src = project.get('imageUrl')
       return (
@@ -103,7 +105,10 @@ class Project extends React.Component {
               More like this
             </div>
             <div className={cls('more-content')}>
-              {this._getMoreProjects()}
+              <div className={cls('more-projects')}>
+                {this._getMoreProjects()}
+              </div>
+              <GetInTouch />
             </div>
           </div>
         </div>
