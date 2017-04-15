@@ -20,7 +20,6 @@ jsconfig.json
 credentials
 
 !*/**/public/
-Dockerfile
 .idea
 
 # Flow
