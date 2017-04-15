@@ -7,6 +7,13 @@ export default class FlipCard extends React.Component {
   static propTypes = {
     front: React.PropTypes.object,
     back: React.PropTypes.object,
+    frontLabel: React.PropTypes.node,
+    backLabel: React.PropTypes.node,
+  }
+
+  static defaultProps = {
+    frontLabel: 'see description',
+    backLabel: 'back',
   }
 
   state = {}
@@ -15,7 +22,7 @@ export default class FlipCard extends React.Component {
     this.setState(prevState => ({isFlipped: !prevState.isFlipped}))
 
   render () {
-    const {front, back} = this.props
+    const {front, back, frontLabel, backLabel} = this.props
     const className = classnames('FlipCard', this.props.className, {
       'FlipCard--flip': this.state.isFlipped,
     })
@@ -25,13 +32,13 @@ export default class FlipCard extends React.Component {
           <div className={cls('front')}>
             {front}
             <div className={cls('footer')} onClick={this._onToggle}>
-              see description
+              {frontLabel}
             </div>
           </div>
           <div className={cls('back')}>
             {back}
             <div className={cls('footer')} onClick={this._onToggle}>
-              back
+              {backLabel}
             </div>
           </div>
         </div>

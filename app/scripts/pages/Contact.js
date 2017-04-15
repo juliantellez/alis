@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ContactForm from './contact/components/ContactForm'
+import ContactForm from 'scripts/components/forms/ContactForm'
 import ContactCard from './contact/components/ContactCard'
 import Socials from './contact/components/Socials'
 

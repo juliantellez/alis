@@ -1,4 +1,4 @@
-import ContactForm from 'scripts/pages/contact/components/ContactForm'
+import ContactForm from 'scripts/components/forms/ContactForm'
 
 describe('<ContactForm />', () => {
   it('renders', () => {
