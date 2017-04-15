@@ -5,4 +5,6 @@ export default class Project extends I.Record({
   slug: '',
   imageUrl: '',
   description: '',
+  palette: I.List(),
+  related: I.List(),
 }) {}

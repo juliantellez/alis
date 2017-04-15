@@ -15,7 +15,11 @@ export default {
       }
     `
     return graphql.query({query})
-    .then(res => res.get('data').get('getProjects').map(projectHelper.getFromData))
+    .then(res =>
+      res.get('data')
+      .get('getProjects')
+      .map(projectHelper.getFromData)
+    )
   },
   getProjectBySlug (slug) {
     const query = `
@@ -23,6 +27,7 @@ export default {
         getBySlug(slug: "${slug}"){
           name,
           slug,
+          palette,
           imageUrl,
           description,
         }
@@ -33,5 +38,21 @@ export default {
       const project = res.get('data').get('getBySlug')
       return projectHelper.getFromData(project)
     })
+  },
+  getRelatedProjects (slug) {
+    const query = `
+      query {
+        getRelatedProjects(slug: "${slug}"){
+          slug,
+          imageUrl,
+        }
+      }
+    `
+    return graphql.query({query})
+    .then(res =>
+      res.get('data')
+      .get('getRelatedProjects')
+      .map(projectHelper.getFromData)
+    )
   },
 }
