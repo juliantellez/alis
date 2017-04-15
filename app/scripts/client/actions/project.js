@@ -7,7 +7,7 @@ const projects = {
   },
   GET_RELATED_PROJECTS (slug) {
     return projectManager.getRelatedProjects(slug)
-  }
+  },
 }
 
 export default createActionPromise(projects)

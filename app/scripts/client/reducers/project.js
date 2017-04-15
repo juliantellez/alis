@@ -1,4 +1,3 @@
-import I from 'immutable'
 import Project from 'scripts/api/definitions/Project'
 
 const onGetProjectBySlugSuccess = (state, action) => {
