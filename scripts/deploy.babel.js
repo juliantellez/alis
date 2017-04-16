@@ -25,7 +25,7 @@ const getRevReplaceOptions = () => ({
 
 const getRevUrlsOptions = () => ({
   revise: (origUrl, fullUrl, manifest) => {
-    return origUrl
+    return path.join('/static', origUrl)
   },
   pattern: RegExp(`[("'](${BASE_URL}.+?)['")]`, 'g'),
 })
@@ -40,7 +40,7 @@ gulp.task('revision:images', () =>
 )
 
 gulp.task('revision:bundles', () =>
-  gulp.src(['/**/*'], {root: path.join(STATIC, '/bundles')})
+  gulp.src(['/**/*'], {root: path.join(STATIC, BASE_URL, 'bundles')})
   .pipe($.rev())
   .pipe($.revDeleteOriginal())
   .pipe(gulp.dest(DEST))
