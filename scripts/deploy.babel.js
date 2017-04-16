@@ -25,10 +25,9 @@ const getRevReplaceOptions = () => ({
 
 const getRevUrlsOptions = () => ({
   revise: (origUrl, fullUrl, manifest) => {
-    console.log(origUrl, fullUrl)
     return origUrl
   },
-  pattern: RegExp(`[("'](${STATIC}.+?)['")]`, 'g'),
+  pattern: RegExp(`[("'](${BASE_URL}.+?)['")]`, 'g'),
 })
 
 gulp.task('revision:images', () =>

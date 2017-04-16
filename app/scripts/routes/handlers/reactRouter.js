@@ -18,7 +18,7 @@ const createElement = (component, routeProps) => {
 
 export default {
   method: 'GET',
-  path: path.normalize(path.join(config.get('BASE_URL'), '/{path*}')),
+  path: '/{path*}',
   handler: (request: Function, reply: Function) => {
     const location = request.url
     Promise.all([

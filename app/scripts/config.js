@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === 'local') {
   process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0'
 }
 
-const apiEnpoint = url => path.normalize(path.join(appConfig.BASE_URL, '/api', url))
+const apiEnpoint = url => path.normalize(path.join('/api', url))
 const apiEndpoints = {
   sendMail: apiEnpoint('send-mail'),
   graphql: apiEnpoint('graphql'),
