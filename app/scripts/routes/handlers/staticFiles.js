@@ -7,8 +7,6 @@ export default {
   handler: {
     directory: {
       path: path.join(config.STATIC, config.BASE_URL),
-      listing: true,
-      index: false,
     },
   },
 }
