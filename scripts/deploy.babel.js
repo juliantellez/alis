@@ -9,7 +9,7 @@ const $ = plugins()
 const env = process.env.NODE_ENV || 'dev'
 
 const S3 = {
-  BUCKET: `aliway-portfolio-${env}`,
+  BUCKET: `aliway-${env}`,
   REGION: 'eu-west-1',
 }
 
@@ -20,14 +20,15 @@ const AWS_PREFIX = `https://s3-${S3.REGION}.amazonaws.com/${S3.BUCKET}`
 const getRevReplaceOptions = () => ({
   prefix: AWS_PREFIX,
   manifest: gulp.src(MANIFEST_PATH),
-  replaceInExtensions: ['.js', '.css', '.html', '.hbs', '.png', '.jpg'],
+  replaceInExtensions: ['.js', '.css', '.html', '.png', '.jpg'],
 })
 
 const getRevUrlsOptions = () => ({
   revise: (origUrl, fullUrl, manifest) => {
-    return path.join('/static', origUrl)
+    console.log(origUrl, fullUrl)
+    return origUrl
   },
-  pattern: RegExp(`[("'](${BASE_URL}.+?)['")]`, 'g'),
+  pattern: RegExp(`[("'](${STATIC}.+?)['")]`, 'g'),
 })
 
 gulp.task('revision:images', () =>
@@ -40,7 +41,7 @@ gulp.task('revision:images', () =>
 )
 
 gulp.task('revision:bundles', () =>
-  gulp.src(['/**/*'], {root: path.join(STATIC, '/emails/bundles')})
+  gulp.src(['/**/*'], {root: path.join(STATIC, '/bundles')})
   .pipe($.rev())
   .pipe($.revDeleteOriginal())
   .pipe(gulp.dest(DEST))

@@ -3,7 +3,7 @@
 const path = require('path')
 
 const APP_PORT = 8000
-const BASE_URL = '/'
+const BASE_URL = '/aliway'
 const ENV = process.env.NODE_ENV || 'development'
 
 const SRC = path.join(__dirname, 'app')
@@ -14,15 +14,15 @@ const STATIC = path.join(DEST, 'static')
 const PATHS = {
   styles: {
     src: path.join(SRC, 'styles/main.scss'),
-    dest: path.join(STATIC, 'styles'),
+    dest: path.join(STATIC, BASE_URL, 'styles'),
   },
   fonts: {
     src: path.join(SRC, 'fonts/**/*'),
-    dest: path.join(STATIC, 'fonts'),
+    dest: path.join(STATIC, BASE_URL, 'fonts'),
   },
   images: {
     src: path.join(SRC, 'images/**/*'),
-    dest: path.join(STATIC, 'images'),
+    dest: path.join(STATIC, BASE_URL, 'images'),
   },
   scripts: {
     src: path.join(SRC, 'scripts/**/*.js'),
@@ -30,7 +30,7 @@ const PATHS = {
   },
   webpack: {
     src: path.join(SRC, 'scripts/client/**/*.js'),
-    dest: path.join(STATIC, 'bundles'),
+    dest: path.join(STATIC, BASE_URL, 'bundles'),
   },
 }
 

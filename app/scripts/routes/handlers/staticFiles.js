@@ -1,7 +1,7 @@
 import config from 'scripts/config'
 
 export default {
-  path: '/static/{param*}',
+  path: '/{param*}',
   method: 'GET',
   handler: {
     directory: {
