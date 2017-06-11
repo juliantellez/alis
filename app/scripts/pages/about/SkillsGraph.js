@@ -4,7 +4,7 @@ import {
   Tooltip,
   RadialBar,
   RadialBarChart,
-} from 'Recharts'
+} from 'recharts'
 
 const cls = elm => `SkillsGraph-${elm}`
 

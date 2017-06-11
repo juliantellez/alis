@@ -3,8 +3,10 @@ import _ from 'lodash'
 import request from 'superagent'
 import {baseUrl} from 'scripts/utils/env'
 
+console.log(baseUrl)
 const post = (url, manager, method, data = {}) => {
   let path = `${url}/${manager}/${method}`
+  console.log(url, path)
   return new Promise((resolve, reject) => {
     request
     .post(path)

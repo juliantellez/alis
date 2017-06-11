@@ -31,7 +31,10 @@ const getRevUrlsOptions = () => ({
 })
 
 gulp.task('revision:images', () =>
-  gulp.src('/**/*', {root: PATHS.images.dest})
+  gulp.src(
+    ['/**/*', '!/**/favicon.ico'],
+    {root: PATHS.images.dest}
+  )
   .pipe($.rev())
   .pipe($.revDeleteOriginal())
   .pipe(gulp.dest(DEST))
@@ -50,8 +53,15 @@ gulp.task('revision:bundles', () =>
 
 gulp.task('revision:styles', () =>
   gulp.src('/**/*.css', {root: PATHS.styles.dest})
+  // Replace urls
   .pipe($.revUrls(getRevUrlsOptions()))
   .pipe($.revReplace(getRevReplaceOptions()))
+  .pipe(gulp.dest(DEST))
+  // File revision
+  .pipe($.rev())
+  .pipe($.revDeleteOriginal())
+  .pipe(gulp.dest(DEST))
+  .pipe($.rev.manifest(MANIFEST_PATH, {merge: true}))
   .pipe(gulp.dest(DEST))
 )
 
@@ -64,8 +74,8 @@ gulp.task('revision:scripts', () =>
 
 gulp.task('revision', $.sequence(
   'revision:images',
-  'revision:bundles',
   'revision:styles',
+  'revision:bundles',
   'revision:scripts'
 ))
 
@@ -85,7 +95,7 @@ gulp.task('deploy:static', () => {
 
   const publisher = $.awspublish.create(settings)
 
-  return gulp.src([DEST + '/**/images/**/*', DEST + '/**/bundles/**/*'])
+  return gulp.src([DEST + '/static*/**'])
   .pipe($.awspublishRouter({
     cache: {
       public: true,
