@@ -18,7 +18,7 @@ export default class About extends React.Component {
     return (
       <div className='About'>
         <div className={cls('content')}>
-          <img className={cls('img')} src='/static/images/pages/ali.png'/>
+          <img className={cls('img')} src='/aliway/images/pages/ali.png'/>
           <div className={cls('title')}>All you need to know about me</div>
           <div className={cls('text')}>
             I’m an UK based designer,

@@ -3,7 +3,7 @@ import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 
 import config from 'scripts/config'
-import nodeMailer from 'server/services/nodemailer'
+import nodeMailer from 'scripts/server/services/nodemailer'
 import failAction from 'scripts/routes/utils/failAction'
 
 import ContacEmail from 'scripts/components/email/Contact'

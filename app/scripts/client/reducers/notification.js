@@ -2,7 +2,7 @@ import {
   SET_NOTIFICATION,
   REMOVE_NOTIFICATION,
 } from 'scripts/client/actions/notification'
-import Notification from 'scripts/api/definitions/notification'
+import Notification from 'scripts/api/definitions/Notification'
 
 const setNotification = ({content}) => new Notification({content})
 

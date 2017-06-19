@@ -4,11 +4,12 @@ import request from 'superagent'
 import {baseUrl} from 'scripts/utils/env'
 
 const post = (url, manager, method, data = {}) => {
-  let path = `${url}/${manager}/${method}`
+  let path = `${url}${manager}${method}`
   return new Promise((resolve, reject) => {
     request
     .post(path)
     .send(data)
+    .withCredentials()
     .end((e, res) => {
       const hasError = !_.isEmpty(e)
       const hasBody = !hasError && !_.isEmpty(res.body)
@@ -20,5 +21,5 @@ const post = (url, manager, method, data = {}) => {
 
 export default {
   post,
-  api: post.bind(null, baseUrl, 'api'),
+  api: post.bind(null, baseUrl, 'api/'),
 }

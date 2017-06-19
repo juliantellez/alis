@@ -1,13 +1,12 @@
+import path from 'path'
 import config from 'scripts/config'
 
 export default {
-  path: '/static/{param*}',
+  path: `${config.BASE_URL}/{param*}`,
   method: 'GET',
   handler: {
     directory: {
-      path: config.STATIC,
-      listing: true,
-      index: false,
+      path: path.join(config.STATIC, config.BASE_URL),
     },
   },
 }

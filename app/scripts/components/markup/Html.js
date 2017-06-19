@@ -13,12 +13,12 @@ export default class Html extends React.Component {
         <head>
         <title>{this.props.title}</title>
         <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1' />
-        <link rel='icon' type='image/x-icon' href='/static/images/fav.ico' />
-        <link rel='stylesheet' type='text/css' href='/static/styles/main.css' />
+        <link rel='icon' type='image/x-icon' href='/aliway/images/fav.ico' />
+        <link rel='stylesheet' type='text/css' href='/aliway/styles/main.css' />
         </head>
         <body>
           <div id='main' dangerouslySetInnerHTML={{__html: this.props.children}} />
-          <script src='/static/bundles/client.js'></script>
+          <script src='/aliway/bundles/client.js'></script>
           <script dangerouslySetInnerHTML={{__html: `window.STATE = ${state}`}}/>
         </body>
       </html>

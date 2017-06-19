@@ -8,8 +8,10 @@ if (process.env.NODE_ENV === 'local') {
   // Do not check for TLS certificates
   process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0'
 }
+// TODO FIX THIS
+// process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0' // TODO remove this
 
-const apiEnpoint = url => path.normalize(path.join(appConfig.BASE_URL, '/api', url))
+const apiEnpoint = url => path.normalize(path.join('/api', url))
 const apiEndpoints = {
   sendMail: apiEnpoint('send-mail'),
   graphql: apiEnpoint('graphql'),

@@ -28,6 +28,15 @@
       flex-direction: column;
       justify-content: center;
       border: 20px solid $color-light-blue-grey;
+      &-link {
+        margin: 10px 0;
+        font-weight: 400;
+        &--active {
+          text-transform: uppercase;
+          text-decoration: none;
+          font-weight: $bold;
+        }
+      }
     }
     &-button {
       @include cancelIcon($size: 30px, $opacity: 1);

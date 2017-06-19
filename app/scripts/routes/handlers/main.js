@@ -1,9 +1,9 @@
-import mailSender from './mailSender'
+// import mailSender from './mailSender'
 import reactRouter from './reactRouter'
 import staticFiles from './staticFiles'
 
 export default [
-  mailSender,
+  // mailSender,
   reactRouter,
   staticFiles,
 ]
