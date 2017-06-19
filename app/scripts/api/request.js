@@ -3,14 +3,15 @@ import _ from 'lodash'
 import request from 'superagent'
 import {baseUrl} from 'scripts/utils/env'
 
-console.log(baseUrl)
 const post = (url, manager, method, data = {}) => {
-  let path = `${url}/${manager}/${method}`
-  console.log(url, path)
+  // let path = `${url}/${manager}/${method}`
+  // TODO FIX THIS
+  let path = `http://ec2-52-210-241-161.eu-west-1.compute.amazonaws.com/${manager}/${method}`
   return new Promise((resolve, reject) => {
     request
     .post(path)
     .send(data)
+    .withCredentials()
     .end((e, res) => {
       const hasError = !_.isEmpty(e)
       const hasBody = !hasError && !_.isEmpty(res.body)

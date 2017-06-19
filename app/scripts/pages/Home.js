@@ -1,7 +1,9 @@
 import React from 'react'
 
-import Logo from 'scripts/components/icons/LogoShort'
-import Modal from 'scripts/components/header/LinksModal'
+import Logo from 'scripts/components/icons/Logo'
+import Foot from 'scripts/components/icons/Foot'
+import Links from 'scripts/components/header/Links'
+import Footer from 'scripts/components/helpers/Footer'
 
 const cls = elm => `Home-${elm}`
 
@@ -12,14 +14,12 @@ export default class Home extends React.Component {
   render () {
     return (
       <div className='Home'>
+        <Logo className={cls('logo')} />
         <div className={cls('content')}>
-          <Logo className={cls('icon')} />
-          <div className={cls('text')}>
-            Hi I’m Ali , welcome to my online portfolio,
-            web and graphic designer.
-          </div>
-          <Modal className={cls('modal')} />
+          <Foot className={cls('foot')} />
+          <Links className={cls('links')} />
         </div>
+        <Footer />
       </div>
     )
   }
