@@ -19,10 +19,10 @@ export default class Links extends React.Component {
 
   _getLinks () {
     return [
-      this._getLink('/works', 'Projects'), // TODO update link
+      this._getLink('/', 'Home'),
       this._getLink('/about', 'About'),
+      this._getLink('/works', 'Works'),
       this._getLink('/contact', 'Contact'),
-      // this._getLink('/shop', 'Shop'), // TODO
     ]
   }
 
