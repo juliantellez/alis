@@ -12,14 +12,13 @@ export default class Home extends React.Component {
   render () {
     return (
       <div className='Home'>
-        <Logo className={cls('logo')} />
         <div className={cls('content')}>
           <Logo className={cls('icon')} />
-           <div className={cls('text')}>
-             Hi I’m Ali , welcome to my online portfolio,
-             web and graphic designer.
-           </div>
-           <Modal className={cls('modal')} />
+          <div className={cls('text')}>
+            Hi I’m Ali , welcome to my online portfolio,
+            web and graphic designer.
+          </div>
+          <Modal className={cls('modal')} />
         </div>
       </div>
     )

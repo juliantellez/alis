@@ -1,91 +1,55 @@
 .Home {
   width: 100%;
   height: 100%;
-  background-color: $color-green;
-  position: relative;
-  &-logo {
-    width: 120px;
-    height: 60px;
-    margin: 20px 15px;
-  }
-  &-foot {
-    @include media (mobile) {
-      position: absolute;
-      top: 110px;
-      left: -10px;
-      width: 320px;
-      transform: rotate(90deg);
-    }
-  }
+  padding: 15px;
+  background-color: $color-white;
+
   &-content {
-    @include media(mobile) {
-      transform: scale(1.2);
-      margin-top: -129px;
-    }
-    @media only screen and (max-width: 600px) and (min-width: 350px) {
-      transform: scale(1.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 15px;
+    border-radius: 5px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border: 20px solid $color-light-blue-grey;
+  }
+  &-icon {
+    width: 190px;
+    height: 200px;
+    margin-top: auto;
+  }
+  &-text {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 15px;
+    color: $color-grey-warm;
+    @include media(tablet) {
+      font-size: 24px;
+      max-width: 460px;
+      padding-top: 40px;
+      padding-bottom: 70px;
     }
   }
-  &-links {
-    .Links {
-      @include media (mobile) {
-        &-link{
-          position: absolute;
-          font-weight: $bold;
-          font-size: 20px;
-          &:nth-child(1) {
-            top: 136px;
-            left: 195px;
-          }
-          &:nth-child(2) {
-            top: 230px;
-            left: 215px;
-          }
-          &:nth-child(3) {
-            top: 299px;
-            left: 194px;
-          }
-          &:nth-child(4) {
-            top: 350px;
-            left: 178px;
-          }
-        }
-      }
+  &-modal {
+    transition: transform .3s ease-in;
+    &:hover {
+      transform: rotate(180deg)
     }
   }
-  @include media (tablet) {
-    $width: 682px;
-    $distance: calc((100% - #{$width}) / 2);
-    &-foot {
-      left: $distance;
-      position: absolute;
-      bottom: 0;
-      max-width: $width;
+  &-button {
+    width: 50px;
+    height: 20px;
+    transition: height .2s ease-in, width .2s ease-in;
+    &:hover {
+      height: 21px;
+      width: 55px;
+      cursor: pointer;
     }
-    &-links {
-      .Links {
-        &-link{
-          position: absolute;
-          font-weight: $bold;
-          font-size: 30px;
-          &:nth-child(1) {
-            bottom: 435px;
-            left: calc(#{$distance} + 42px)
-          }
-          &:nth-child(2) {
-            bottom: 459px;
-            left: calc(#{$distance} + 232px)
-          }
-          &:nth-child(3) {
-            bottom: 413px;
-            left: calc(#{$distance} + 341px)
-          }
-          &:nth-child(4) {
-            bottom: 413px;
-            left: calc(#{$distance} + 10px)
-          }
-        }
-      }
-    }
+  }
+  .Footer {
+    margin-top: auto;
   }
 }
