@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === 'local') {
   process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0'
 }
 // TODO FIX THIS
-process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0' // TODO remove this
+// process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0' // TODO remove this
 
 const apiEnpoint = url => path.normalize(path.join('/api', url))
 const apiEndpoints = {

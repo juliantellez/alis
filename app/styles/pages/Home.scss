@@ -9,33 +9,81 @@
     margin: 20px 15px;
   }
   &-foot {
-    top: 110px;
-    left: -10px;
-    position: absolute;
-    width: 320px;
-    transform: rotate(90deg);
+    @include media (mobile) {
+      position: absolute;
+      top: 110px;
+      left: -10px;
+      width: 320px;
+      transform: rotate(90deg);
+    }
+  }
+  &-content {
+    @include media(mobile) {
+      transform: scale(1.2);
+      margin-top: -129px;
+    }
+    @media only screen and (max-width: 600px) and (min-width: 350px) {
+      transform: scale(1.5);
+    }
   }
   &-links {
     .Links {
-      &-link{
-        position: absolute;
-        font-weight: $bold;
-        font-size: 20px;
-        &:nth-child(1) {
-          top: 136px;
-          left: 195px;
+      @include media (mobile) {
+        &-link{
+          position: absolute;
+          font-weight: $bold;
+          font-size: 20px;
+          &:nth-child(1) {
+            top: 136px;
+            left: 195px;
+          }
+          &:nth-child(2) {
+            top: 230px;
+            left: 215px;
+          }
+          &:nth-child(3) {
+            top: 299px;
+            left: 194px;
+          }
+          &:nth-child(4) {
+            top: 350px;
+            left: 178px;
+          }
         }
-        &:nth-child(2) {
-          top: 230px;
-          left: 215px;
-        }
-        &:nth-child(3) {
-          top: 299px;
-          left: 194px;
-        }
-        &:nth-child(4) {
-          top: 350px;
-          left: 178px;
+      }
+    }
+  }
+  @include media (tablet) {
+    $width: 682px;
+    $distance: calc((100% - #{$width}) / 2);
+    &-foot {
+      left: $distance;
+      position: absolute;
+      bottom: 0;
+      max-width: $width;
+    }
+    &-links {
+      .Links {
+        &-link{
+          position: absolute;
+          font-weight: $bold;
+          font-size: 30px;
+          &:nth-child(1) {
+            bottom: 435px;
+            left: calc(#{$distance} + 42px)
+          }
+          &:nth-child(2) {
+            bottom: 459px;
+            left: calc(#{$distance} + 232px)
+          }
+          &:nth-child(3) {
+            bottom: 413px;
+            left: calc(#{$distance} + 341px)
+          }
+          &:nth-child(4) {
+            bottom: 413px;
+            left: calc(#{$distance} + 10px)
+          }
         }
       }
     }
