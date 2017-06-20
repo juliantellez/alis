@@ -23,10 +23,10 @@
       align-items: center;
       flex-direction: column;
       justify-content: center;
-      border: 20px solid $color-light-blue-grey;
       &-link {
         margin: 10px 0;
         font-weight: 400;
+        font-size: 23px;
         &--active {
           text-transform: uppercase;
           text-decoration: none;
@@ -35,10 +35,10 @@
       }
     }
     &-button {
-      @include cancelIcon($size: 30px, $opacity: 1);
+      @include cancelIcon($size: 20px, $opacity: 1);
       position: absolute;
-      right: 15%;
-      top: 13%;
+      right: 20%;
+      top: 20%;
     }
   }
 }
