@@ -2,10 +2,6 @@
   &-burgermenu {
     width: 45px;
     height: 20px;
-    @include media(tablet) {
-      width: 55px;
-      height: 23px;
-    }
     &:hover {
       cursor: pointer;
     }

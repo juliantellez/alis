@@ -3,10 +3,29 @@ import I from 'immutable'
 
 const data = [
   {
-    name: 'Drills Guru',
-    slug: 'drills-guru',
+    name: 'Drills Guru Logo Design',
+    slug: 'drills-guru-logo',
+    imageUrl: '/aliway/images/pages/works/logo.jpg',
+    palette: ['#FE4800', '#FFFFFF'],
+    related: [],
+    description: `Drills Guru is an educational website which promotes 
+      the acquisition of knowledge through repetitive and selective practice.\n
+      This logo explores the concept of technology and mentoring and their 
+      association with the learning process.`,
+  },
+  {
+    name: 'Drills Guru Website',
+    slug: 'drills-guru-webiste',
     imageUrl: '/aliway/images/pages/works/drillsGuru.jpg',
     description: 'Working on this project fom the scratch, can be used on any device, using customise logo, icons, chalenging part was to match content and idea in one .',
+    palette: ['#FE4800', '#FFFFFF'],
+    related: ['news-app', 'calendar', 'analytics-graph', 'news-app', 'calendar', 'analytics-graph', 'news-app', 'calendar', 'analytics-graph'],
+  },
+  {
+    name: 'Svg Portrait',
+    slug: 'svg-portrait',
+    imageUrl: '/aliway/images/pages/works/cindy.jpg',
+    description: 'Creating an SVG portrait ,this work includes personalised design an experemetn whit shadows and huge color pallet, to make portrait look more realistic .',
     palette: ['gray', 'red', 'blue', 'orange'],
     related: ['news-app', 'calendar', 'analytics-graph', 'news-app', 'calendar', 'analytics-graph', 'news-app', 'calendar', 'analytics-graph'],
   },
@@ -31,22 +50,6 @@ const data = [
     slug: 'calendar',
     imageUrl: '/aliway/images/pages/works/calendar.jpg',
     description: 'Designing ISO and android calendar screen  for news app , using customised icons and  content based on research and work in Sketch designer.',
-    palette: ['gray', 'red', 'blue', 'orange'],
-    related: ['news-app', 'calendar', 'analytics-graph', 'news-app', 'calendar', 'analytics-graph', 'news-app', 'calendar', 'analytics-graph'],
-  },
-  {
-    name: 'Svg Portrait',
-    slug: 'svg-portrait',
-    imageUrl: '/aliway/images/pages/works/cindy.jpg',
-    description: 'Creating an SVG portrait ,this work includes personalised design an experemetn whit shadows and huge color pallet, to make portrait look more realistic .',
-    palette: ['gray', 'red', 'blue', 'orange'],
-    related: ['news-app', 'calendar', 'analytics-graph', 'news-app', 'calendar', 'analytics-graph', 'news-app', 'calendar', 'analytics-graph'],
-  },
-  {
-    name: 'Logo Design',
-    slug: 'logo-design',
-    imageUrl: '/aliway/images/pages/works/logo.jpg',
-    description: 'This custom logo designed for learning website, using a content and name of the website. ',
     palette: ['gray', 'red', 'blue', 'orange'],
     related: ['news-app', 'calendar', 'analytics-graph', 'news-app', 'calendar', 'analytics-graph', 'news-app', 'calendar', 'analytics-graph'],
   },

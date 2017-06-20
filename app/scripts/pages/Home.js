@@ -15,8 +15,8 @@ export default class Home extends React.Component {
         <div className={cls('content')}>
           <Logo className={cls('icon')} />
           <div className={cls('text')}>
-            Hi I’m Ali , welcome to my online portfolio,
-            web and graphic designer.
+            Hi I’m Ali, welcome to my online portfolio.<br/>
+            Web and graphic design.
           </div>
           <Modal className={cls('modal')} />
         </div>
