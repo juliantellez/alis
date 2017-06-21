@@ -2,12 +2,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  background: url(encodeSvg(svg-headerBackground()));
   background-size: cover;
   background-position: 0 95%;
   padding: 10px;
-  padding-bottom: 70px;
+  height: 80px;
   @include media(tablet) {
     padding-right: 25px;
   }
@@ -29,12 +27,12 @@
     display: none;
     @include media (desktop) {
       display: flex;
-      margin-right: 30px;
-      justify-content: space-between;
+      align-items: center;
     }
     .Links {
       &-link {
-        margin-left: 85px;
+        width: 150px;
+        text-align: right;
       }
     }
   }

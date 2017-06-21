@@ -11,7 +11,7 @@
     width: 100%;
     padding: 15px;
     height: 100vh;
-    background: url(encodeSvg(svg-background()));
+    background-color: $color-white;
     background-size: cover;
     position: relative;
     .Links {
@@ -35,7 +35,7 @@
       }
     }
     &-button {
-      @include cancelIcon($size: 20px, $opacity: 1);
+      @include cancelIcon($color: $color-greyish-brown-three, $size: 20px, $opacity: 1);
       position: absolute;
       right: 20%;
       top: 20%;
