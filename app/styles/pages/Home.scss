@@ -57,15 +57,19 @@
       flex-direction: row;
       justify-content: space-around;
       margin-top: 20px;
+      max-width: 800px;
     }
     &-work {
+      width: 200px;
       margin-bottom: 15px;
-      height: 200px;
       @include media (tablet) {
-        height: 270px;
+        width: 320px;
+        margin-bottom: 40px;
+        max-height: 230px;
+        overflow: scroll;
       }
       &-img {
-        height: 100%;
+        width: 100%
       }
     }
     .Home-scroll {

@@ -58,10 +58,10 @@ export default class Home extends React.Component {
         <div className={classnames(cls('section'), cls('works'))}>
           <div className={cls('works-title')}>Beatiful & functional web design.</div>
           <div className={cls('works-content')}>
-            {this._getWork('/projects/drills-guru-webiste', '/aliway/images/pages/works/logo.jpg')}
-            {this._getWork('/projects/drills-guru-webiste', '/aliway/images/pages/works/logo.jpg')}
-            {this._getWork('/projects/drills-guru-webiste', '/aliway/images/pages/works/logo.jpg')}
-            {this._getWork('/projects/drills-guru-webiste', '/aliway/images/pages/works/logo.jpg')}
+            {this._getWork('/projects/drills-guru-webiste', '/aliway/images/projects/drills_guru_website.png')}
+            {this._getWork('/projects/santa-murs-website', '/aliway/images/projects/santa_murs_webiste.png')}
+            {this._getWork('/projects/latinos-in-london', '/aliway/images/projects/latinos_in_london.png')}
+            {this._getWork('/projects/free-will-communitiy-website', '/aliway/images/projects/free_will_communitiy_website.png')}
           </div>
           {this._getScrollTo(cls('contact'))}
         </div>
