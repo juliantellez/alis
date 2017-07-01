@@ -67,7 +67,7 @@ export default class Home extends React.Component {
         </div>
         <div className={classnames(cls('section'), cls('contact'))}>
           <div>Let's Talk,</div>
-          <div>I'm always looking for new and exciting opportunities!</div>
+          <div>I'm always looking for new and exciting projects!</div>
           <Link to='/contact'>Contact Me Here</Link>
           <Footer />
         </div>
