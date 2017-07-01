@@ -14,10 +14,10 @@ export default class TypeWriter extends React.Component {
 
   static defaultProps = {
     list: [
-      'Visual Design',
-      'Product Thinking',
-      'Research',
-      'Prototyping',
+      'Visual Design.',
+      'Product Thinking.',
+      'Research.',
+      'Prototyping.',
     ],
   }
 

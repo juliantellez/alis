@@ -1,17 +1,10 @@
 .Home {
   width: 100%;
-  background-color: $color-white;
+  position: relative;
   .Header {
     &-logo {
       display: none;
     }
-  }
-  &-content {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
   }
   &-icon {
     width: 120px;
@@ -19,21 +12,70 @@
   }
   &-text {
     font-size: 13px;
-    font-weight: 600;
     text-align: center;
     padding: 15px 0;
     color: $color-greyish-brown-three;
     min-height: 120px;
     @include media(tablet) {
-      font-size: 21px;
+      font-size: 18px;
       max-width: 460px;
       padding: 35px 0;
     }
   }
-  &-modal {
-    transition: transform .3s ease-in;
+  &-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 100%;
+    padding-top: 55px;
+  }
+  &-scroll {
+    width: 25px;
+    height: 25px;
+    fill: $color-greyish-brown-three;
+    stroke: $color-greyish-brown-three;
+    position: absolute;
+    bottom: 10%;
     &:hover {
-      transform: rotate(180deg)
+      cursor: pointer;
     }
+  }
+  &-works {
+    justify-content: flex-start;
+    &-title {
+      font-size: 24px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    &-content {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+    &-work {
+      margin-bottom: 15px;
+      height: 200px;
+      @include media (tablet) {
+        height: 270px;
+      }
+      &-img {
+        height: 100%;
+      }
+    }
+    .Home-scroll {
+      position: relative;
+      margin-top: auto;
+      margin-bottom: 50px;
+    }
+  }
+  &-contact {
+    line-height: 30px;
+    text-align: center;
   }
 }

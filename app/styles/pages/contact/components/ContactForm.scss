@@ -21,18 +21,18 @@
     border-radius: 6px;
     color: $color-white;
     align-items: center;
-    border: 1px solid $color-blue-marine;
-    background-color: $color-blue-marine;
+    border: 1px solid $color-greyish-brown-three;
+    background-color: $color-greyish-brown-three;
     transition: background-color .5s ease-in-out;
     &:hover {
       cursor: pointer;
-      background-color: $color-blue-marine--dark;
+      background-color: darken($color-greyish-brown-three, 20%)
     }
     &-text {
       padding-right: 5px;
     }
   }
   &-error {
-    color: $color-white;
+    color: $color-greyish-brown-three;
   }
 }

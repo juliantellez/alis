@@ -9,11 +9,11 @@
     width: 63px;
     margin: 5px;
     height: 57px;
-    fill: $color-blue-marine;
+    fill: $color-greyish-brown-three;
     transition: fill .5s ease-in-out;
     &:hover {
       cursor: pointer;
-      fill: $color-blue-marine--dark;
+      fill: $color-greyish-brown-three;
     }
   }
 }
