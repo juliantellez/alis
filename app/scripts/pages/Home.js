@@ -16,7 +16,7 @@ export default class Home extends React.Component {
     store: React.PropTypes.object,
   }
 
-  _onClick = (selector) => {
+  _onClick = selector => {
     if (!document) {
       return null
     }
@@ -56,7 +56,7 @@ export default class Home extends React.Component {
           {this._getScrollTo(cls('works'))}
         </div>
         <div className={classnames(cls('section'), cls('works'))}>
-          <div className={cls('works-title')}>Beatiful & functional web design.</div>
+          <div className={cls('works-title')}>Beatiful & functional web designs.</div>
           <div className={cls('works-content')}>
             {this._getWork('/projects/drills-guru-webiste', '/aliway/images/projects/drills_guru_website.png')}
             {this._getWork('/projects/santa-murs-website', '/aliway/images/projects/santa_murs_webiste.png')}

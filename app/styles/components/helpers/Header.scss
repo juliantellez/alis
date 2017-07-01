@@ -18,15 +18,8 @@
     align-items: base-line;
   }
   &-logo {
-    width: 120px;
-    height: 60px;
+    height: 30px;
     margin-left: 20px;
-    g {
-      stroke-width: 4px;
-    }
-    path:last-child {
-      stroke-width: 6px;
-    }
   }
   &-links {
     display: none;
