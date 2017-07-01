@@ -21,7 +21,7 @@ export default class Links extends React.Component {
     return [
       this._getLink('/', 'Home'),
       this._getLink('/about', 'About'),
-      this._getLink('/works', 'Works'),
+      this._getLink('/projects', 'Projects'),
       this._getLink('/contact', 'Contact'),
     ]
   }

@@ -5,7 +5,6 @@ const data = [
   {
     name: 'Drills Guru Logo Design',
     slug: 'drills-guru-logo',
-    imageUrl: '/aliway/images/pages/works/logo.jpg',
     imageUrl: '/aliway/images/projects/drills_guru_logo.png',
     palette: ['#FE4800', '#FFFFFF'],
     related: [],
@@ -67,9 +66,9 @@ const data = [
   },
 
   {
-    name: 'Birky',
-    slug: 'birky',
-    imageUrl: '/aliway/images/projects/birky.png',
+    name: 'Birki',
+    slug: 'birki',
+    imageUrl: '/aliway/images/projects/birki_website.png',
     description: '//TODO',
     palette: ['gray', 'red', 'blue', 'orange'],
     related: ['news-app', 'calendar', 'analytics-graph', 'news-app', 'calendar', 'analytics-graph', 'news-app', 'calendar', 'analytics-graph'],

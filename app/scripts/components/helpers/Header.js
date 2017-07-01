@@ -11,9 +11,7 @@ export default class Header extends React.Component {
   render () {
     return (
       <div className='Header'>
-        <Link
-          to='/'
-        >
+        <Link to='/'>
           <Logo className={cls('logo')} />
         </Link>
         <Links className={cls('links')} />

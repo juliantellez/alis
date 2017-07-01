@@ -1,0 +1,17 @@
+.Projects {
+  padding: 70px 0;
+  &-content {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &-link {
+    width: 235px;
+    height: 188px;
+    overflow: hidden;
+  }
+  &-img {
+    width: 100%;
+  }
+}
