@@ -7,9 +7,13 @@
     justify-content: center;
   }
   &-link {
-    width: 235px;
-    height: 188px;
+    width: 142px;
+    height: 115px;
     overflow: hidden;
+    @include media(tablet) {
+      width: 235px;
+      height: 188px;
+    }
   }
   &-img {
     width: 100%;
