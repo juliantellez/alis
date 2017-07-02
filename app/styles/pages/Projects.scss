@@ -13,5 +13,12 @@
   }
   &-img {
     width: 100%;
+    opacity: 1;
+    transform: scale(1);
+    transition: .3s ease-in-out;
+    &:hover {
+      opacity: .5;
+      transform: scale(1.3);
+    }
   }
 }
