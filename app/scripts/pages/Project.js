@@ -56,19 +56,31 @@ class Project extends React.Component {
     this.unsubscribe()
   }
 
-  _getMoreProjects () {
+  _getAside () {
     const {project: {related}} = this.state
-    return related.slice(0, 6).map((project, i) => {
+    if (!related || related.isEmpty()) {
+      return null
+    }
+    const projects = related.slice(0, 6).map((project, i) => {
       const href = `/projects/${project.get('slug')}`
       const src = project.get('imageUrl')
       return (
         <Link className={cls('link')} to={href} key={i} >
-          <div className={cls('more-img-wrapper')}>
-            <img className={cls('more-img')} src={src} />
+          <div className={cls('aside-img-wrapper')}>
+            <img className={cls('aside-img')} src={src} />
           </div>
         </Link>
       )
     })
+    return (
+      <div className={cls('aside')}>
+        <div className={cls('title')}>More like this</div>
+        <div className={cls('aside-content')}>{projects}</div>
+        <div className={cls('aside-footer')}>
+          <Link to='/contact'>Get in touch</Link>
+        </div>
+      </div>
+    )
   }
 
   _canRender () {
@@ -100,17 +112,7 @@ class Project extends React.Component {
             <Drop className={cls('palette-icon')} />
             <Palette palette={project.get('palette')} />
           </div>
-          <div className={cls('more')}>
-            <div className={cls('title')}>
-              More like this
-            </div>
-            <div className={cls('more-content')}>
-              <div className={cls('more-projects')}>
-                {this._getMoreProjects()}
-              </div>
-              <GetInTouch />
-            </div>
-          </div>
+          {this._getAside()}
         </div>
       </div>
     )
