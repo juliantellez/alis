@@ -34,4 +34,13 @@
     flex-direction: column;
     justify-content: space-between;
   }
+  &-ellipsis {
+    fill: $warm-grey-two;
+    height: 5px;
+    margin-bottom: 10px;
+  }
+  &-atom {
+    fill: $warm-grey-two;
+    height: 45px;
+  }
 }
