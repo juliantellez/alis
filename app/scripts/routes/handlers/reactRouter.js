@@ -1,9 +1,7 @@
-import path from 'path'
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { match, RouterContext } from 'react-router'
 
-import config from 'scripts/config'
 import env from 'scripts/utils/env'
 
 import routes from 'scripts/routes/main'
