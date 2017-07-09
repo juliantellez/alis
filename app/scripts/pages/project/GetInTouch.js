@@ -1,5 +1,4 @@
 import React from 'react'
-import classnames from 'classnames'
 
 import ContactForm from 'scripts/components/forms/ContactForm'
 import Mail from 'scripts/components/icons/Mail'

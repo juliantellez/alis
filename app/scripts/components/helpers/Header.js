@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router'
 
-import Logo from 'scripts/components/icons/Logo'
+import Logo from 'scripts/components/icons/LogoShort'
 import Links from 'scripts/components/header/Links'
 import Modal from 'scripts/components/header/LinksModal'
 
@@ -11,9 +11,7 @@ export default class Header extends React.Component {
   render () {
     return (
       <div className='Header'>
-        <Link
-          to='/'
-        >
+        <Link to='/'>
           <Logo className={cls('logo')} />
         </Link>
         <Links className={cls('links')} />

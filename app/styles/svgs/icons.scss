@@ -6,6 +6,7 @@
   @return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 170"><g fill="none" fill-rule="evenodd"><path stroke="#EFFFFC" stroke-width="7" d="M1.99 163.953S238.18 93.93 368.302 93.93s289.69 54.438 503.938 70.022c214.25 15.583 230.296-54.78 370.484-51.57 140.186 3.215 197.276 51.57 197.276 51.57" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="30 60"/><path fill="#F0FFFD" d="M1.99 0H1440v134.44s-161.563-67.376-374.502-12.95c-212.94 54.427-413.61-7.008-533.098-28.82C303.585 50.897 1.99 134.44 1.99 134.44V0z"/></g></svg>';
 }
 
-@function svg-frame() {
-  @return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 282" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M15 101.006C15 97.136 18.133 94 21.992 94h537.016c3.862 0 6.992 3.143 6.992 7.006v267.988c0 3.87-3.133 7.006-6.992 7.006H21.992C18.13 376 15 372.857 15 368.994V101.006zM40 120v230h500V120H40z"/><mask id="b" width="551" height="282" x="0" y="0" fill="#fff"><use xlink:href="#a"/></mask></defs><use fill="#E4F7F4" fill-rule="evenodd" stroke="#93DED1" stroke-width="10" mask="url(#b)" xlink:href="#a" transform="translate(-15 -94)" stroke-linecap="round" stroke-dasharray="3 17"/></svg>';
+@function svg-frame($color: $color-greyish-brown-three) {
+  $color-light: lighten($color, 50%);
+  @return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 282" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M15 101.006C15 97.136 18.133 94 21.992 94h537.016c3.862 0 6.992 3.143 6.992 7.006v267.988c0 3.87-3.133 7.006-6.992 7.006H21.992C18.13 376 15 372.857 15 368.994V101.006zM40 120v230h500V120H40z"/><mask id="b" width="551" height="282" x="0" y="0" fill="#fff"><use xlink:href="#a"/></mask></defs><use fill="' + $color-light +'" fill-rule="evenodd" stroke="'+ $color +'" stroke-width="10" mask="url(#b)" xlink:href="#a" transform="translate(-15 -94)" stroke-linecap="round" stroke-dasharray="3 17"/></svg>';
 }

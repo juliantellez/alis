@@ -1,13 +1,16 @@
 .Header {
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  background: url(encodeSvg(svg-headerBackground()));
-  background-size: cover;
-  background-position: 0 95%;
-  padding: 10px;
-  padding-bottom: 70px;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  position: fixed;
+  background-color: $background-color;
+
   @include media(tablet) {
     padding-right: 25px;
   }
@@ -15,26 +18,19 @@
     align-items: base-line;
   }
   &-logo {
-    width: 120px;
-    height: 60px;
+    height: 30px;
     margin-left: 20px;
-    g {
-      stroke-width: 4px;
-    }
-    path:last-child {
-      stroke-width: 6px;
-    }
   }
   &-links {
     display: none;
     @include media (desktop) {
       display: flex;
-      margin-right: 30px;
-      justify-content: space-between;
+      align-items: center;
     }
     .Links {
       &-link {
-        margin-left: 85px;
+        width: 150px;
+        text-align: right;
       }
     }
   }

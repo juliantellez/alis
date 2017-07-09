@@ -1,0 +1,28 @@
+.Projects {
+  padding: 70px 0;
+  &-content {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &-link {
+    width: 142px;
+    height: 115px;
+    overflow: hidden;
+    @include media(tablet) {
+      width: 235px;
+      height: 188px;
+    }
+  }
+  &-img {
+    width: 100%;
+    opacity: 1;
+    transform: scale(1);
+    transition: .3s ease-in-out;
+    &:hover {
+      opacity: .5;
+      transform: scale(1.3);
+    }
+  }
+}

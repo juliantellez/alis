@@ -1,54 +1,90 @@
 .Home {
   width: 100%;
-  height: 100%;
-  padding: 15px;
-  background-color: $color-white;
-
-  &-content {
-    width: 100%;
-    height: 100%;
+  position: relative;
+  .Header {
+    &-logo {
+      display: none;
+    }
+  }
+  &-icon {
+    width: 120px;
+    height: 110px;
+  }
+  &-text {
+    font-size: 13px;
+    text-align: center;
+    padding: 15px 0;
+    color: $color-greyish-brown-three;
+    min-height: 120px;
+    @include media(tablet) {
+      font-size: 18px;
+      max-width: 460px;
+      padding: 35px 0;
+    }
+  }
+  &-section {
     display: flex;
-    padding: 15px;
-    border-radius: 5px;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    border: 20px solid $color-light-blue-grey;
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 100%;
+    padding-top: 70px;
   }
-  &-icon {
-    width: 190px;
-    height: 200px;
-  }
-  &-text {
-    font-size: 16px;
-    font-weight: 600;
-    text-align: center;
-    padding-bottom: 15px;
-    color: $color-grey-warm;
-    @include media(tablet) {
-      font-size: 24px;
-      max-width: 460px;
-      padding-top: 40px;
-      padding-bottom: 70px;
-    }
-  }
-  &-modal {
-    transition: transform .3s ease-in;
+  &-scroll {
+    width: 25px;
+    height: 25px;
+    fill: $color-greyish-brown-three;
+    stroke: $color-greyish-brown-three;
+    position: absolute;
+    bottom: 10%;
     &:hover {
-      transform: rotate(180deg)
-    }
-  }
-  &-button {
-    width: 50px;
-    height: 20px;
-    transition: height .2s ease-in, width .2s ease-in;
-    &:hover {
-      height: 21px;
-      width: 55px;
       cursor: pointer;
     }
   }
-  .Footer {
-    margin-top: auto;
+  &-works {
+    justify-content: flex-start;
+    &-title {
+      font-size: 24px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    &-content {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 20px;
+      max-width: 800px;
+    }
+    &-work {
+      width: 200px;
+      margin-bottom: 15px;
+      @include media (tablet) {
+        width: 320px;
+        margin-bottom: 40px;
+        max-height: 230px;
+        overflow: scroll;
+      }
+      &-img {
+        width: 100%;
+        transform: scale(1);
+        transition: .3s ease-in-out;
+        &:hover {
+          transform: scale(1.3);
+        }
+      }
+    }
+    .Home-scroll {
+      position: relative;
+      margin-top: auto;
+      margin-bottom: 50px;
+    }
+  }
+  &-contact {
+    line-height: 30px;
+    text-align: center;
   }
 }

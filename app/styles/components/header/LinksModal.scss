@@ -1,11 +1,10 @@
+.ReactModal__Overlay {
+  z-index: 1000;
+}
 .LinksModal {
   &-burgermenu {
-    width: 45px;
+    width: 30px;
     height: 20px;
-    @include media(tablet) {
-      width: 55px;
-      height: 23px;
-    }
     &:hover {
       cursor: pointer;
     }
@@ -15,7 +14,7 @@
     width: 100%;
     padding: 15px;
     height: 100vh;
-    background: url(encodeSvg(svg-background()));
+    background-color: $background-color;
     background-size: cover;
     position: relative;
     .Links {
@@ -27,10 +26,10 @@
       align-items: center;
       flex-direction: column;
       justify-content: center;
-      border: 20px solid $color-light-blue-grey;
       &-link {
         margin: 10px 0;
         font-weight: 400;
+        font-size: 23px;
         &--active {
           text-transform: uppercase;
           text-decoration: none;
@@ -39,10 +38,10 @@
       }
     }
     &-button {
-      @include cancelIcon($size: 30px, $opacity: 1);
+      @include cancelIcon($color: $color-greyish-brown-three, $size: 20px, $opacity: 1);
       position: absolute;
-      right: 15%;
-      top: 13%;
+      right: 20%;
+      top: 20%;
     }
   }
 }

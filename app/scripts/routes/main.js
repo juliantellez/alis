@@ -5,7 +5,7 @@ import env from 'scripts/utils/env'
 
 import Home from 'scripts/pages/Home'
 import About from 'scripts/pages/About'
-import Works from 'scripts/pages/Works'
+import Projects from 'scripts/pages/Projects'
 import Project from 'scripts/pages/Project'
 import Contact from 'scripts/pages/Contact'
 import NotFound from 'scripts/pages/NotFound'
@@ -28,7 +28,7 @@ export default (
     <IndexRoute component={Home} onEnter={onEnter}/>
     <Route component={Layout}>
       <Route path='about' component={About} onEnter={onEnter} />
-      <Route path='works' component={Works} onEnter={onEnter} />
+      <Route path='projects' component={Projects} onEnter={onEnter} />
       <Route path='contact' component={Contact} onEnter={onEnter} />
       <Route path='projects/:project' component={Project} onEnter={onEnter}/>
       <Route path='*' component={NotFound} onEnter={onEnter} />
