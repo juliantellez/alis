@@ -9,6 +9,8 @@ import Arrow from 'scripts/components/icons/Arrow'
 import Logo from 'scripts/components/icons/LogoShort'
 import TypeWriter from 'scripts/components/helpers/TypeWriter'
 
+import {scrollToSelector} from 'scripts/utils/animate'
+
 const cls = elm => `Home-${elm}`
 
 export default class Home extends React.Component {
@@ -16,25 +18,8 @@ export default class Home extends React.Component {
     store: React.PropTypes.object,
   }
 
-  _onClick = selector => {
-    if (!document) {
-      return null
-    }
-    const body = document.body || {}
-    const section = document.getElementsByClassName(selector) || [{}]
-    const sectionTop = section[0].offsetTop
-    const scroll = () => {
-      const STEP = 20
-      body.scrollTop += STEP
-      if (body.scrollTop < sectionTop) {
-        setTimeout(() => scroll(), 10)
-      }
-    }
-    scroll()
-  }
-
   _getScrollTo (selector) {
-    return <Arrow className={cls('scroll')} onClick={this._onClick.bind(null, selector)}/>
+    return <Arrow className={cls('scroll')} onClick={scrollToSelector.bind(null, selector)} />
   }
 
   _getWork = (link, img) => (

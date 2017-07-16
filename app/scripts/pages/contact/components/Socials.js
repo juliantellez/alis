@@ -24,10 +24,10 @@ export default class Socials extends React.Component {
   render () {
     return (
       <div className='Socials'>
-        {this._getSection(LinkedIn, '')}
-        {this._getSection(Facebook, '')}
-        {this._getSection(Dribble, '')}
-        {this._getSection(Pinterest, '')}
+        {this._getSection(LinkedIn, 'https://www.linkedin.com/in/jelena-gubina-b0628824/')}
+        {this._getSection(Facebook, 'https://www.facebook.com/aliona.gubina/')}
+        {this._getSection(Dribble, 'https://dribbble.com/vilvity/')}
+        {this._getSection(Pinterest, 'https://www.pinterest.co.uk/alionagubina/')}
       </div>
     )
   }

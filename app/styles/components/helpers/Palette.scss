@@ -1,10 +1,13 @@
 .Palette {
-  display: inline-flex;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   &-colour {
-    width: 100%;
+    width: 140px;
     height: 15px;
     @include media(desktop) {
-      width: 20px;
+      width: 60px;
     }
   }
 }

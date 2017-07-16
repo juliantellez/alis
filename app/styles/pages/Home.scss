@@ -34,12 +34,14 @@
     padding-top: 70px;
   }
   &-scroll {
-    width: 25px;
-    height: 25px;
+    $size: 25px;
+    width: $size;
+    height: $size;
     fill: $color-greyish-brown-three;
     stroke: $color-greyish-brown-three;
     position: absolute;
     bottom: 10%;
+    left: calc(50% - #{$size / 2});
     &:hover {
       cursor: pointer;
     }
@@ -81,10 +83,12 @@
       position: relative;
       margin-top: auto;
       margin-bottom: 50px;
+      left: initial;
     }
   }
   &-contact {
     line-height: 30px;
     text-align: center;
+    padding-top: 0;
   }
 }

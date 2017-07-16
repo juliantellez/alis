@@ -19,20 +19,20 @@
     display: flex;
     padding: 5px 50px;
     border-radius: 6px;
-    color: $color-white;
     align-items: center;
-    border: 1px solid $color-greyish-brown-three;
-    background-color: $color-greyish-brown-three;
+    border: 1px solid transparent;
+    background-color: white;
     transition: background-color .5s ease-in-out;
     &:hover {
       cursor: pointer;
-      background-color: darken($color-greyish-brown-three, 20%)
+      color: $color-white;
+      background-color: $warm-grey-two;
+      .ContactForm-button-text {
+        color: $color-white;
+      }
     }
     &-text {
       padding-right: 5px;
     }
-  }
-  &-error {
-    color: $color-greyish-brown-three;
   }
 }

@@ -2,15 +2,16 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 20px;
+  margin: 60px 20px;
+  transition: all .5s ease-in;
   @include media(tablet) {
-    margin: 20px auto;
-    max-width: 600px;
+    margin: 60px 40px;
   }
   @include media(desktop) {
+    margin: 90px auto;
     max-width: 960px;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: space-around;
   }
   &-img {
@@ -20,6 +21,9 @@
       max-width: 300px;
       @include media(tablet) {
         max-width: 430px;
+        height: 550px;
+        max-height: 550px;
+        overflow: hidden;
       }
     }
   }
@@ -29,38 +33,39 @@
       padding: 0;
       margin-left: 60px;
       max-width: 645px;
+      display: flex;
+      flex-direction: column;
     }
   }
   &-title {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     position: relative;
-    margin-bottom: 15px;
+    text-align: center;
+    margin-bottom: 10px;
     color: $color-greyish-brown-three;
-    &:after {
-      left: 0;
-      bottom: 0;
-      width: 10%;
-      content: '';
-      position: absolute;
-      border-radius: 3px;
-      border-bottom: 4px solid $color-greyish-brown-three;
-    }
   }
   &-description {
-    margin-bottom: 10px;
+    text-align: center;
+    line-height: 21px;
+    font-size: 14px;
   }
   &-palette {
+    padding: 10px 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    @include media (desktop) {
+      margin-top: auto;
+    }
     &-icon {
       width: 22px;
       height: 32px;
       margin-bottom: 10px;
-      fill: $color-blue-marine;
+      fill: $warm-grey-two;
     }
   }
-  &-more {
+  &-aside {
     margin: 10px 0;
     &-img {
       width: 100%;
@@ -68,23 +73,21 @@
       &-wrapper {
         max-width: 300px;
         margin: 0 auto 10px;
+        max-height: 300px;
+        overflow: hidden;
         @include media(tablet) {
-          margin: 0 10px 10px 0;
+          margin: 10px;
           max-width: 168px;
         }
-      }
-    }
-    &-projects {
-      @include media(tablet) {
-        display: flex;
-        flex-wrap: wrap;
-        width: 420px;
       }
     }
     &-content {
       @include media(tablet) {
         display: flex;
       }
+    }
+    &-footer {
+      text-align: center;
     }
   }
 }

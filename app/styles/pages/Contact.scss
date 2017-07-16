@@ -1,32 +1,29 @@
 .Contact {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
   margin: 50px auto;
+  padding: 30px 10px 0;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-around;
   @include media (tablet) {
-    max-width: 600px;
+    max-width: 500px;
   }
-  @include media (desktop) {
-    max-width: 1000px; 
+  &-hr {
+    padding: 10px;
+    margin: 10px 20%;
+    border-top: 1px solid $color-greyish-brown-three;
   }
-
   &-title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     color: $color-greyish-brown-three;
     padding-bottom: 10px;
+    margin-top: 30px;
   }
-  &-socials {
-    padding-top: 20px;
-    .Contact-title {
-      text-align: center;
-      color: $color-greyish-brown-three;
-    }
+  &-text {
+    padding-bottom: 15px;
   }
   &-form {
-    width: 80%;
-    @include media(tablet) {
-      width: 45%;
-    }
+    margin-bottom: 40px;
   }
 }

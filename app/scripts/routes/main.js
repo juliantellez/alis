@@ -18,6 +18,7 @@ import RootComponent from 'scripts/components/RootComponent'
 
 const onEnter = (nextState, replace, done) => {
   if (env.isBrowser()) {
+    window && window.scrollTo(0, 0)
     store.dispatch(actions.router.setRoute(nextState))
   }
   done()
