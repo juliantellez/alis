@@ -2,7 +2,7 @@
   width: 100%;
   bottom: -100px;
   position: fixed;
-  background-color: $color-blue-marine;
+  background-color: $color-greyish-brown-three;
   transition: bottom .5s cubic-bezier(.455,.03,.515,.955);
   &-button {
     @include cancelIcon();
@@ -18,6 +18,9 @@
     width: 100%;
     text-align: center;
     color: $color-white;
+    * {
+      color: $color-white;
+    }
   }
   &--isOpen {
     bottom: 0

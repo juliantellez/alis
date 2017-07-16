@@ -1,27 +1,38 @@
 import React from 'react'
 
+import {Link} from 'react-router'
+
 import ContactForm from 'scripts/components/forms/ContactForm'
-import ContactCard from './contact/components/ContactCard'
 import Socials from './contact/components/Socials'
 
 const cls = elem => `Contact-${elem}`
 
 export default class Contact extends React.Component {
+  _getEmail () {
+    return (
+      <Link
+        className={cls('link')}
+        href='mailto:jgubina@gmail.com?Subject=Hi%20Ali'
+        target='_blank'
+        >
+          jgubina@gmail.com
+      </Link>
+    )
+  }
+
   render () {
     return (
       <div className='Contact'>
-        <div className={cls('form')}>
-          <div className={cls('title')} >Get in touch</div>
-          <ContactForm />
+        <div className={cls('text')} >
+          I'm always looking for exciting projects to work on,
+          feel free to drop me an inbox at anytime!
         </div>
-        <div className={cls('contacts')}>
-          <div className={cls('title')} >Contacts</div>
-          <ContactCard />
-        </div>
-        <div className={cls('socials')}>
-          <div className={cls('title')} >Follow my work</div>
-          <Socials />
-        </div>
+        <div className={cls('hr')} />
+        <ContactForm />
+        <div className={cls('title')}>Contacts</div>
+        <div className={cls('text')}>{this._getEmail()}</div>
+        <div className={cls('title')} >Follow my work</div>
+        <Socials />
       </div>
     )
   }

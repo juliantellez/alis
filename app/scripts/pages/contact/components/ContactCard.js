@@ -17,10 +17,11 @@ export default class ContactCard extends React.Component {
     )
   }
   _getEmail () {
+    const subject = 'Hi%20Ali'
     return (
       <Link
         className={cls('link')}
-        href='mailto:jgubina@gmail.com?Subject=Hi%20Ali'
+        href={`mailto:jgubina@gmail.com?Subject=${subject}`}
         target='_blank'
         >
           jgubina@gmail.com
