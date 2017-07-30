@@ -47,8 +47,8 @@ export default class Home extends React.Component {
               '/projects/drills-guru-landing-page',
               '/aliway/images/projects/drills-guru-landing-page.png')}
             {this._getWork(
-              '/projects/santa-murs-website',
-              '/aliway/images/projects/santa-murs-webiste.png')}
+              '/projects/santa-murs-landing-page',
+              '/aliway/images/projects/santa-murs-landing-page.png')}
             {this._getWork(
               '/projects/latinos-in-london',
               '/aliway/images/projects/latinos-in-london.png')}
