@@ -47,8 +47,12 @@
   }
   &-description {
     text-align: center;
-    line-height: 21px;
-    font-size: 14px;
+    line-height: 35px;
+    font-size: 20px;
+    font-weight: 100;
+    color: #736f6f;
+    height: 206px;
+    overflow: scroll;
   }
   &-palette {
     padding: 10px 0;

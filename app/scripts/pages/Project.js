@@ -74,7 +74,7 @@ class Project extends React.Component {
     })
     return (
       <div className={cls('aside')}>
-        <div className={cls('title')}>More like this</div>
+        <div className={cls('title')}>Related Projects</div>
         <div className={cls('aside-content')}>{projects}</div>
         <div className={cls('aside-footer')}>
           <Link to='/contact'>Get in touch</Link>
