@@ -8,10 +8,12 @@ const data = [
     imageUrl: '/aliway/images/projects/drills-guru-logo.png',
     palette: ['#FE4800', '#FFFFFF'],
     related: ['drills-guru-landing-page', 'drills-guru-profile-page', 'drills-guru-payment-modal'],
-    description: `Drills Guru is an educational website which promotes 
+    description: (
+      `Drills Guru is an educational website which promotes 
       the acquisition of knowledge through repetitive and selective practice.
       This logo explores the concept of technology and mentoring and their 
-      association with the learning process.`,
+      association with the learning process.`
+    ),
   },
   {
     name: 'Drills Guru Landing Page',
@@ -19,11 +21,14 @@ const data = [
     imageUrl: '/aliway/images/projects/drills-guru-landing-page.png',
     palette: ['#FE4600', '#5B5B5B', '#FFFFFF', '#0456A1'],
     related: ['drills-guru-logo', 'drills-guru-profile-page', 'drills-guru-payment-modal'],
-    description: `This page aims to create a memorable experience by
-    guiding the user towards a desired action ("find and click"). Visitors are drawned
-    further into the site by suggesting proposed actions but supporting them
-    with a search functionality. This page also provides quick access to basic navigation needs
-    such as quick checkout, sign-in and sign-up.`,
+    description: (
+      `This page aims to create a memorable experience by
+      guiding the user towards the desired action ("find and click").
+      Visitors are drawn further into the site by suggesting proposed actions
+      but supporting them with a search functionality.
+      This page also provides quick access to basic navigation needs
+      such as quick checkout, sign-in and sign-up.`
+    ),
   },
   {
     name: 'Drills Guru\'s Profile Page',
@@ -46,10 +51,10 @@ const data = [
     palette: ['#FE4600', '#5B5B5B', '#FFFFFF', '#0456A1'],
     related: ['drills-guru-logo', 'drills-guru-landing-page', 'drills-guru-profile-page'],
     description: (
-      `The idea behind this page is to ease and simplify the user's payment experience.
-      This modal provides a simple but robust UI that serves as middle ground between the website
-      and a third party payment's platform.
-      `
+      `The idea behind this page is to ease and simplify the user's
+      payment experience. This modal window provides a simple but robust
+      UI that serves as middle ground between the website and a third party
+      payment's platform.`
     ),
   },
   {
@@ -65,10 +70,11 @@ const data = [
       '#52342A', '#8A4C39', '#A47A54', '#D59F80', '#B19C8B', '#826358',
     ],
     description: (
-      `A geometric Vector Portrait. The goal of this experiment is to represent
-      a face familiar to the eye using only straight lines. This works explores 
-      shadowing and color tonality to recreate form, shape and space. The result
-      is a more striking, yet pleasing and recognizable portrait.`
+      `A geometric Vector Portrait.
+      The goal of this experiment is to represent a face familiar to the eye
+      using only straight lines. This work explores shadowing and colour
+      tonality to recreate form, shape and space.
+      The result is a more striking, yet pleasing and recognizable portrait.`
     ),
   },
   {
@@ -94,7 +100,7 @@ const data = [
     description: (
       `The goal of this project was to target a seasonal audience and generate leads for a small bakery.
       it includes a simple form for the visitor to get into contact with birky, and further encourages
-      leads generation by offering a limitted time offer.`
+      leads generation by offering a limited time offer.`
     ),
   },
   {
@@ -104,9 +110,9 @@ const data = [
     related: ['svg-portrait'],
     palette: ['#99CDAF', '#312C2C', '#AAAA72', '#070606', '#C28D8D', '#E2E480'],
     description: (
-      `This piece came about as a discovery of a truly amazing piece of software called sketch.
-      It explores basic concepts such as shapes, curves, flips, shadows,
-      color tonality and symetric mirroring.
+      `This piece came about as a discovery of a truly amazing piece of
+      software called Sketch. It explores basic concepts such as shapes,
+      curves, flips, shadows, colour tonality and symmetric mirroring.
       `
     ),
   },
@@ -124,20 +130,44 @@ const data = [
     ),
   },
   {
-    name: 'Latinos in London',
+    name: 'Latinos in London Website',
     slug: 'latinos-in-london',
     imageUrl: '/aliway/images/projects/latinos-in-london.png',
-    description: '//TODO',
-    palette: ['gray', 'red', 'blue', 'orange'],
-    related: ['news-app', 'calendar', 'analytics-dashboard', 'news-app', 'calendar', 'analytics-dashboard', 'news-app', 'calendar', 'analytics-dashboard'],
+    palette: ['#ED1C24', '#000000', '#FFFFFF'],
+    related: ['movie-bucket-website'],
+    description: (
+      `This is a proposal for a website of the same name, it collects all the
+      functionalities and traits of the current version and organises them in
+      clear and structured sections. This project re-structures the way content
+      is consumed throughout the site and preserves the company's brand identity.
+      `
+    ),
   },
   {
-    name: 'Santa Murs',
+    name: 'Santa Murs Landing Page',
     slug: 'santa-murs-landing-page',
     imageUrl: '/aliway/images/projects/santa-murs-webiste.png',
-    description: '//TODO',
-    palette: ['gray', 'red', 'blue', 'orange'],
-    related: ['news-app', 'calendar', 'analytics-dashboard', 'news-app', 'calendar', 'analytics-dashboard', 'news-app', 'calendar', 'analytics-dashboard'],
+    palette: ['#F48282', '#5B5B5B', '#FFFFFF'],
+    related: ['free-will-communitiy-email-marketing', 'birki-landing-page'],
+    description: (
+      `The goal of this page is to promote the artist's upcoming tour.
+      Its approach is simple yet effective; it exposes the promoter,
+      the artist's name and a call to action linked to a mailing list.
+      `
+    ),
+  },
+  {
+    name: 'Movie Bucket Landing Page',
+    slug: 'movie-bucket-website',
+    imageUrl: '/aliway/images/projects/movie-bucket-website.png',
+    palette: ['#16233B', '#00D29E', '#F1F1F1'],
+    related: ['latinos-in-london'],
+    description: (
+      `An interactive movie search application. The idea behind this web app is
+      to serve as a movie finder. it constructed with simplicity in mind where
+      interaction is self-generated by the user's input.
+      `
+    ),
   },
   {
     name: 'News App',
