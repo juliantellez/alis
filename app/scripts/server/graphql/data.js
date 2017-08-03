@@ -146,7 +146,7 @@ const data = [
   {
     name: 'Santa Murs Landing Page',
     slug: 'santa-murs-landing-page',
-    imageUrl: '/aliway/images/projects/santa-murs-webiste.png',
+    imageUrl: '/aliway/images/projects/santa-murs-landing-page.png',
     palette: ['#F48282', '#5B5B5B', '#FFFFFF'],
     related: ['free-will-communitiy-email-marketing', 'birki-landing-page'],
     description: (

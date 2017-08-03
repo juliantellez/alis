@@ -54,7 +54,7 @@ export default class Home extends React.Component {
               '/aliway/images/projects/latinos-in-london.png')}
             {this._getWork(
               '/projects/free-will-communitiy-website',
-              '/aliway/images/projects/free-will-communitiy-website.png')}
+              '/aliway/images/projects/free-will-communitiy-email-marketing.png')}
           </div>
           {this._getScrollTo(cls('contact'))}
         </div>
