@@ -18,6 +18,6 @@ server.register(plugins, e => {
   server.route(routeHandler)
 
   server.start(e => {
-    console.log(`Server running on: ${server.info.port}`)
+    console.log(`Server running on: ${server.info.port}`) // eslint-disable-line no-console
   })
 })

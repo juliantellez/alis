@@ -6,8 +6,6 @@ import Loader from 'scripts/components/helpers/Loader'
 import Palette from 'scripts/components/helpers/Palette'
 import Drop from 'scripts/components/icons/Drop'
 
-import GetInTouch from './project/GetInTouch'
-
 const cls = elem => `Project-${elem}`
 
 class Project extends React.Component {
