@@ -63,8 +63,6 @@ export default class Projects extends React.Component {
       <div className={cls()}>
         <div className={cls('content')}>
           {projects}
-          {projects}
-          {projects}
         </div>
       </div>
     )
