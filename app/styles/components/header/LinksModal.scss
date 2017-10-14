@@ -14,7 +14,6 @@
     width: 100%;
     padding: 15px;
     height: 100vh;
-    background-color: $background-color;
     background-size: cover;
     position: relative;
     .Links {
@@ -35,6 +34,17 @@
           text-decoration: none;
           font-weight: $bold;
         }
+      }
+    }
+
+    &-theme {
+      &-dark {
+        background-color: #141414;
+        color: #A7A7A7;
+      }
+      &-light {
+        background-color: #FFFFFF;
+        color: #141414;
       }
     }
     &-button {

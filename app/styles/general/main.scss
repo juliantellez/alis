@@ -1,7 +1,6 @@
 html, * {
   -webkit-font-smoothing: antialiased;
   font-family: $fontFamily-base;
-  color: $color-greyish-brown-three;
 }
 
 #main,
@@ -9,11 +8,15 @@ html, * {
   min-width: 100%;
   min-height: 100%;
   font-family: $fontFamily-base;
-  background-color: $background-color;
+}
+
+a {
+  color: #4A4A4A;
 }
 
 .Root {
-  position: relative,
+  position: relative;
+  transition: all .5s ease-in;
 }
 
 @mixin title ($color: $color-greyish-brown-three) {

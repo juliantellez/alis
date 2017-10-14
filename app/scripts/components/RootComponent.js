@@ -25,6 +25,8 @@ export default class RootComponent extends React.Component {
     actions: React.PropTypes.object,
   }
 
+  state = {}
+
   getChildContext () {
     const {store, env, actions} = this.props
     return {
@@ -34,9 +36,20 @@ export default class RootComponent extends React.Component {
     }
   }
 
+  _updateState = () => {
+    const {colorTheme} = this.props.store.getState()
+    this.setState({colorTheme})
+  }
+
+  componentWillMount () {
+    const {store} = this.props
+    this.unsubscribe = store.subscribe(this._updateState)
+    this._updateState()
+  }
+
   render () {
     return (
-      <div className='Root'>
+      <div className='Root' style={this.state.colorTheme.styles}>
         {this.props.children}
         <Notifications />
       </div>

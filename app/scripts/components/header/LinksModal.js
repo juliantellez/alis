@@ -20,11 +20,20 @@ export default class LinksModal extends React.Component {
     if (!env.isBrowser()) {
       return
     }
-    this.unsubscribe = store.subscribe(this._closeModal)
+    this.unsubscribeModal = store.subscribe(this._closeModal)
+    this.unsubscribeColorTheme = store.subscribe(this._updateState)
+    this._updateState()
   }
 
   componentWillUnmount () {
-    this.unsubscribe()
+    this.unsubscribeModal()
+    this.unsubscribeColorTheme()
+  }
+
+  _updateState = () => {
+    const {store} = this.context
+    const {colorTheme} = store.getState()
+    this.setState({colorTheme})
   }
 
   _closeModal = () => this.setState({modalIsOpen: false})
@@ -32,10 +41,11 @@ export default class LinksModal extends React.Component {
   _onClick = () => this.setState({modalIsOpen: true})
 
   _getModal () {
+    const colorThemeType = this.state.colorTheme && this.state.colorTheme.type
     return (
     <Modal
       contentLabel='Modal'
-      className={cls('modal')}
+      className={classnames(cls('modal'), cls(`modal-theme-${colorThemeType}`))}
       isOpen={this.state.modalIsOpen}
       onRequestClose={this._closeModal}
       >

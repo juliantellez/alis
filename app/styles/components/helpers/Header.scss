@@ -3,13 +3,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: all .5s ease-in;
 
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
   position: fixed;
-  background-color: $background-color;
 
   @include media(tablet) {
     padding-right: 25px;
@@ -26,6 +26,7 @@
     @include media (desktop) {
       display: flex;
       align-items: center;
+      margin-right: 110px;
     }
     .Links {
       &-link {
@@ -34,6 +35,28 @@
       }
     }
   }
+  &-color-theme-button {
+    padding: 3px 6px;
+    position: absolute;
+    right: 75px;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: capitalize;
+
+    @include media (desktop) {
+      right: 15px;
+    }
+
+    &-dark {
+      color: #D5D5D5;
+      background-color: #141414;
+    }
+    &-light {
+      color: #141414;
+      background-color: #e0dfdf;
+    }
+  }
+
   &-modal {
     @include media(desktop) {
       display: none;
