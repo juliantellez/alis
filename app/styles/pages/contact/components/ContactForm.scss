@@ -18,21 +18,29 @@
   &-button {
     display: flex;
     padding: 5px 50px;
-    border-radius: 6px;
     align-items: center;
     border: 1px solid transparent;
     background-color: white;
     transition: background-color .5s ease-in-out;
-    &:hover {
-      cursor: pointer;
-      color: $color-white;
-      background-color: $warm-grey-two;
-      .ContactForm-button-text {
-        color: $color-white;
-      }
-    }
+    cursor: pointer;
     &-text {
       padding-right: 5px;
+    }
+  }
+  &-color-theme {
+    font-size: 14px;
+    text-transform: capitalize;
+    &-dark {
+      .ContactForm-button {
+        color: #D5D5D5;
+        background-color: #141414;  
+      }
+    }
+    &-light {
+      .ContactForm-button {
+        color: #141414;
+        background-color: #e0dfdf;
+      }
     }
   }
 }

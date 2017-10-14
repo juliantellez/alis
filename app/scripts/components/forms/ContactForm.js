@@ -2,6 +2,7 @@ import _ from 'lodash'
 import React from 'react'
 import Formsy from 'formsy-react'
 import {Link} from 'react-router'
+import classnames from 'classnames'
 
 import Spinner from 'scripts/components/helpers/Spinner'
 import mailSenderManager from 'scripts/api/managers/mailSender'
@@ -17,6 +18,22 @@ export default class ContactForm extends React.Component {
   }
 
   state = {}
+
+  _updateState = () => {
+    const {store} = this.context
+    const {colorTheme} = store.getState()
+    this.setState({colorTheme})
+  }
+
+  componentWillMount () {
+    const {store} = this.context
+    this.unsubscribe = store.subscribe(this._updateState)
+    this._updateState()
+  }
+
+  componentWillUnmount () {
+    this.unsubscribe()
+  }
 
   _setNotification = content => {
     const {store, actions} = this.context
@@ -97,8 +114,13 @@ export default class ContactForm extends React.Component {
   }
 
   render () {
+    const {colorTheme} = this.state
+    const oppositeType = colorTheme.type === 'light' ? 'dark' : 'light'
+    const selector = 'color-theme'
+    const className = classnames('ContactForm', cls(selector), cls(`${selector}-${oppositeType}`))
+
     return (
-      <div className='ContactForm' >
+      <div className={className} >
         <Formsy.Form
           className={cls('form')}
           onValidSubmit={this._onValidSubmit}
