@@ -44,8 +44,8 @@ export default class Home extends React.Component {
           <div className={cls('works-title')}>Beatiful & functional web designs.</div>
           <div className={cls('works-content')}>
             {this._getWork(
-              '/projects/drills-guru-webiste',
-              '/aliway/images/projects/drills_guru_website.png')}
+              '/projects/amigos',
+              '/aliway/images/projects/amigos.png')}
             {this._getWork(
               '/projects/santa-murs-website',
               '/aliway/images/projects/santa_murs_webiste.png')}
@@ -53,8 +53,8 @@ export default class Home extends React.Component {
               '/projects/latinos-in-london',
               '/aliway/images/projects/latinos_in_london.png')}
             {this._getWork(
-              '/projects/free-will-communitiy-website',
-              '/aliway/images/projects/free_will_communitiy_website.png')}
+              '/projects/laviston',
+              '/aliway/images/projects/laviston.png')}
           </div>
           {this._getScrollTo(cls('contact'))}
         </div>

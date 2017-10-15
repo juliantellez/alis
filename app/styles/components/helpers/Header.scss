@@ -35,7 +35,7 @@
       }
     }
   }
-  &-color-theme-button {
+  &-button {
     padding: 3px 6px;
     position: absolute;
     right: 75px;
@@ -46,14 +46,26 @@
     @include media (desktop) {
       right: 15px;
     }
+  }
 
+  &-color-theme {
     &-dark {
-      color: #D5D5D5;
-      background-color: #141414;
+      .Header-button {
+        color: #D5D5D5;
+        background-color: #141414;
+      }
+      a {
+        color: #141414;
+      }
     }
     &-light {
-      color: #141414;
-      background-color: #e0dfdf;
+      .Header-button {
+        color: #141414;
+        background-color: #e0dfdf;
+      }
+      a {
+        color: #a7a7a7;
+      }
     }
   }
 

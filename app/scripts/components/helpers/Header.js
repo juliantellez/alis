@@ -37,27 +37,27 @@ export default class Header extends React.Component {
     store.dispatch(actions.colorTheme.toggleColorTheme())
   }
 
-  renderButton () {
-    const {colorTheme} = this.state
-    const oppositeType = colorTheme.type === 'light' ? 'dark' : 'light'
-    const selector = 'color-theme-button'
-    const className = classnames(cls(selector), cls(`${selector}-${oppositeType}`))
-
+  renderButton (type) {
     return (
-      <div className={className} onClick={this.handleClick}>
-        {oppositeType} theme
+      <div className={cls('button')} onClick={this.handleClick}>
+        {type} theme
       </div>
     )
   }
 
   render () {
+    const {colorTheme} = this.state
+    const oppositeType = colorTheme.type === 'light' ? 'dark' : 'light'
+    const selector = 'color-theme'
+    const className = classnames('Header', cls(selector), cls(`${selector}-${oppositeType}`))
+
     return (
-      <div className='Header' style={this.state.colorTheme.styles}>
+      <div className={className} style={this.state.colorTheme.styles}>
         <Link to='/'>
           <Logo className={cls('logo')} />
         </Link>
         <Links className={cls('links')} />
-        {this.renderButton()}
+        {this.renderButton(oppositeType)}
         <Modal className={cls('modal')} />
       </div>
     )
