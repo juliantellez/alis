@@ -15,3 +15,9 @@ This is an experimental project which aims to explore Isomorphic implementations
  - server Rendering + routing
  - state managment & hydration
 
+### Docker
+quick reference: 
+```
+docker build -t juliantellez/alisportfolio .
+docker run -p 8080:8000 juliantellez/alisportfolio
+```
